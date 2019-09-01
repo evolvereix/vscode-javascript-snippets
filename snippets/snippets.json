@@ -1,0 +1,636 @@
+{  
+  "Var Statement": {
+		"prefix": "var",
+		"body": [
+			"var ${0}"
+		],
+		"description": "Var Statement"
+  },
+
+  "Var Assignment": {
+		"prefix": "v=",
+		"body": [
+			"var ${1:name} = ${2:value}"
+		],
+		"description": "Var Assignment"
+  },
+
+  "Let Statement": {
+		"prefix": "let",
+		"body": [
+			"let ${0}"
+		],
+		"description": "Let Statement"
+  },
+
+  "Let Assignment": {
+		"prefix": "l=",
+		"body": [
+			"let ${1:name} = ${2:value}"
+		],
+		"description": "Let Assignment"
+  },
+
+  "Destructuring Let Assignment": {
+		"prefix": "letd",
+		"body": [
+			"let { ${1:name} } = ${2:value}"
+		],
+		"description": "Destructuring Let Assignment"
+  },
+
+  "Const Statement": {
+		"prefix": "const",
+		"body": [
+			"const ${0}"
+		],
+		"description": "Const Statement"
+  },
+
+  "Const Assignment": {
+		"prefix": "const=",
+		"body": [
+			"const ${1:name} = ${2:value}"
+		],
+		"description": "Const Assignment"
+  },
+
+  "Destructuring Const Assignment": {
+		"prefix": "constd",
+		"body": [
+			"const { ${1:name} } = ${2:value}"
+		],
+		"description": "Destructuring Const Assignment"
+  },
+
+  "If Statement": {
+    "prefix": "if",
+		"body": [
+			"if (${1:condition}) {",
+      "  ${0}",
+      "}"
+		],
+		"description": "If Statement"
+  },
+  
+  "Else Statement": {
+    "prefix": "el",
+		"body": [
+			"else {",
+      "  ${0}",
+      "}"
+		],
+		"description": "Else Statement"
+  },
+
+  "If/Else Statement": {
+    "prefix": "ife",
+		"body": [
+			"if (${1:condition}) {",
+      "  ${0}",
+      "} else {",
+      "  ${1}",
+      "}"
+		],
+		"description": "If/Else Statement"
+  },
+
+  "Else-If Statement": {
+    "prefix": "eli",
+		"body": [
+			"else if (${1:condition}) {",
+      "  ${0}",
+      "}"
+		],
+		"description": "Else-If Statement"
+  },
+
+  "Ternary Operator": {
+    "prefix": "ter",
+		"body": [
+			"${1:condition} ? ${2:expression} : ${3:expression}"
+		],
+		"description": "Ternary Operator"
+  },
+
+  "For Loop": {
+    "prefix": "for",
+		"body": [
+			"for (let ${1:i} = 0, ${2:len} = ${3:iterable}.length; ${1:i} < ${2:len}; ${1:i}++) {",
+      "  ${4:const} ${5:element} = ${3:iterable}[${1:i}]",
+      "}"
+		],
+		"description": "For Loop"
+  },
+
+  "Reverse For Loop": {
+    "prefix": "forr",
+		"body": [
+			"for (let ${1:i} = ${2:iterable}.length - 1; ${1:i} >= 0; ${1:i}--) {",
+      "  ${0}",
+      "}"
+		],
+		"description": "Reverse For Loop"
+  },
+
+  "For-In Loop": {
+    "prefix": "forin",
+		"body": [
+			"for (let ${1:item} in ${2:object}) {",
+      "  if (${2:object}.hasOwnProperty(${1:item})) {",
+      "    ${0}",
+      "  }",
+      "}"
+		],
+		"description": "For-In Loop. Not be used to iterate over an Array"
+  },
+
+  "While Loop": {
+    "prefix": "while",
+    "body": [
+			"while (${1:condition}) {",
+      "  ${0}",
+      "}"
+		],
+		"description": "While Loop"
+  },
+
+  "Try/Catch": {
+    "prefix": "try",
+    "body": [
+			"try {",
+      "  ${0}",
+      "} catch (${1:err}) {",
+      "  ${2}",
+      "}"
+		],
+		"description": "Try/Catch"
+  },
+
+  "Try/Finally": {
+    "prefix": "tryf",
+    "body": [
+			"try {",
+      "  ${0}",
+      "} finally {",
+      "  ${1}",
+      "}"
+		],
+		"description": "Try/Finally"
+  },
+
+  "Try/Catch/Finally": {
+    "prefix": "trycf",
+    "body": [
+			"try {",
+      "  ${0}",
+      "} catch (${1:err}) {",
+      "  ${2}",
+      "} finally {",
+      "  ${3}",
+      "}"
+		],
+		"description": "Try/Catch/Finally"
+  },
+
+  "Switch Case": {
+    "prefix": "sw",
+    "body": [
+			"switch (${1:expr}) {",
+      "  case ${2:value}:",
+      "    return ${0}",
+      "  default:",
+      "    return",
+      "}"
+		],
+		"description": "Switch Case"
+  },
+
+  "Named Function": {
+    "prefix": "func",
+    "body": [
+      "function ${1:name}(${2:args}) {",
+      "  ${0}",
+      "}"
+		],
+		"description": "Named Function"
+  },
+
+  "Arrow Function": {
+    "prefix": "af",
+    "body": [
+      "(${1:args}) => ${2:statement}"
+		],
+		"description": "Arrow Function"
+  },
+
+  "IIFE": {
+    "prefix": "iife",
+    "body": [
+      "((${1:args}) => {",
+      "  ${0}",
+      "})(${2})"
+		],
+    "description": "IIFE"
+  },
+
+  "Named Arrow Function Expressions": {
+    "prefix": "afn",
+    "body": [
+      "const ${1:name} = (${2:args}) => {",
+      "  ${0}",
+      "}"
+		],
+		"description": "Named Arrow Function Expressions"
+  },
+
+  "Generator Function": {
+    "prefix": "gf",
+    "body": [
+      "function* ${1:name}(${2:args}) {",
+      "  ${0}",
+      "}"
+		],
+		"description": "Generator Function"
+  },
+
+  "Function.prototype.call()": {
+    "prefix": "call",
+    "body": [
+      "${1}call(${2:this}, ${3:args})"
+		],
+    "description": "Function.prototype.call()"
+  },
+
+  "Function.prototype.apply()": {
+    "prefix": "apply",
+    "body": [
+      "${1}apply(${2:this}, ${3:args})"
+		],
+    "description": "Function.apply()"
+  },
+
+  "Function.prototype.bind()": {
+    "prefix": "bind",
+    "body": [
+      "${1}bind(${2:this}, ${3:args})"
+		],
+    "description": "Function.prototype.bind()"
+  },
+
+  "For-Of Loop": {
+    "prefix": "forof",
+		"body": [
+			"for (let ${1:iterator} of ${2:object}) {",
+      "  ${0}",
+      "}"
+		],
+		"description": "For-Of Loop"
+  },
+
+  "ForEach Loop": {
+    "prefix": "fore",
+		"body": [
+			"${1}forEach((${2:item}) => {",
+      "  ${0}",
+      "}"
+		],
+		"description": "For-Of Loop"
+  },
+
+  "Array.prototype.map()": {
+    "prefix": "map",
+		"body": [
+			"${1}map((${2:item}) => {",
+      "  ${0}",
+      "}"
+		],
+		"description": "Array.prototype.map()"
+  },
+
+  "Array.prototype.reduce()": {
+    "prefix": "reduce",
+		"body": [
+			"${1}reduce((${2:previous}, ${3:current}) => {",
+      "  ${0}",
+      "}${4:, initial})"
+		],
+		"description": "Array.prototype.reduce()"
+  },
+
+  "Array.prototype.filter()": {
+    "prefix": "filter",
+		"body": [
+			"${1}filter((${2:item}) => {",
+      "  ${0}",
+      "})"
+		],
+		"description": "Array.prototype.filter()"
+  },
+
+  "Array.prototype.find()": {
+    "prefix": "find",
+		"body": [
+			"${1}find((${2:item}) => {",
+      "  ${0}",
+      "})"
+		],
+		"description": "Array.prototype.find()"
+  },
+
+  "Array.prototype.some()": {
+    "prefix": "some",
+		"body": [
+			"${1}some((${2:item}) => {",
+      "  return ${0}",
+      "})"
+		],
+		"description": "Array.prototype.some()"
+  },
+
+  "Array.prototype.sort()": {
+    "prefix": "sort",
+		"body": [
+			"${1}sort((${1:a}, ${2:b}) => { return ${1:a} - ${2:b} })"
+		],
+		"description": "Array.prototype.sort()"
+  },
+
+  "Key/Value Pair": {
+    "prefix": "key",
+		"body": [
+			"${1:key}: ${2:value},${0}"
+		],
+		"description": "Key/Value Pair"
+  },
+
+  "Class Elements": {
+    "prefix": "class",
+		"body": [
+      "class ${1:name} {",
+      "  constructor(${2:arguments}) {",
+      "    ${0}",
+      "  }",
+      "}"
+		],
+		"description": "Class Elements"
+  },
+
+  "Class Constructor": {
+    "prefix": "constructor",
+		"body": [
+      "constructor(${1:arguments}) {",
+      "  super(${1:arguments})",
+      "  ${0}",
+      " }"
+		],
+		"description": "Class Constructor"
+  },
+
+  "Class Extends": {
+    "prefix": "extends",
+		"body": [
+      "class ${1:name} extends ${2:base} {",
+      "  constructor(${3:arguments}) {",
+      "    super(${3:arguments})",
+      "    ${0}",
+      "  }",
+      "}"
+		],
+		"description": "Class Extends"
+  },
+
+  "Class Static Statement": {
+    "prefix": "staticstatement",
+		"body": [
+      "static ${1:name} = ${2}"
+		],
+		"description": "Class Static Statement"
+  },
+
+  "Class Static Method": {
+    "prefix": "staticsmethod",
+		"body": [
+      "static ${1:name}() {",
+      "  ${0}",
+      "}"
+		],
+		"description": "Class Static Method"
+  },
+
+  "Prototype Method": {
+    "prefix": "prototype",
+		"body": [
+      "${1:Class}prototype.${2:method} = function(${3:args}) {",
+      "  ${0}",
+      "}"
+		],
+		"description": "Prototype Method"
+  },
+
+  "Getter": {
+    "prefix": "get",
+		"body": [
+			"get ${1:property}() {",
+      "  ${0}",
+      "})"
+		],
+		"description": "Getter"
+  },
+
+  "Setter": {
+    "prefix": "set",
+		"body": [
+			"set ${1:property}(${2:value}) {",
+      "  ${0}",
+      "})"
+		],
+		"description": "Setter"
+  },
+
+  "Object.assign()": {
+    "prefix": "assign",
+		"body": [
+			"Object.assign(${1:dest}, ${2:source})"
+		],
+		"description": "Object.assign()"
+  },
+
+  "Typeof": {
+    "prefix": "typeof",
+		"body": [
+      "typeof ${1:source} === '${2:undefined}'"
+		],
+		"description": "Typeof"
+  },
+
+  "Instanceof": {
+    "prefix": "instanceof",
+		"body": [
+      "${1:source} instanceof ${2:Object}"
+		],
+		"description": "Instanceof"
+  },
+
+  "Return Promise": {
+    "prefix": "retp",
+		"body": [
+      "return new Promise((resolve, reject) => {",
+      "  ${0:resolve()}",
+      "})"
+		],
+		"description": "Return Promise"
+  },
+
+  "Promise": {
+    "prefix": "pro",
+		"body": [
+      "new Promise((resolve, reject) => {",
+      "  ${0:resolve()}",
+      "})"
+		],
+		"description": "Promise"
+  },
+
+  "Promise.prototype.then()": {
+    "prefix": "then",
+		"body": [
+      "${1:promise}then((${2:value}) => {",
+      "  ${0}",
+      "})"
+		],
+		"description": "Promise.prototype.then()"
+  },
+
+  "Promise.prototype.catch()": {
+    "prefix": "catch",
+		"body": [
+      "${1:promise.}catch((${2:err}) => {",
+      "  ${0}",
+      "})"
+		],
+		"description": "Promise.prototype.catch()"
+  },
+
+  "Export": {
+    "prefix": "exp",
+		"body": [
+      "export ${1:member}"
+		],
+		"description": "Export"
+  },
+
+  "Export Default": {
+    "prefix": "expd",
+		"body": [
+      "export default ${1:member}"
+		],
+		"description": "Export Default"
+  },
+
+  "Export Function": {
+    "prefix": "expf",
+		"body": [
+      "export const ${1:name} = (${2:args}) => {",
+      "  ${0}",
+      "}"
+		],
+		"description": "Export Function"
+  },
+
+  "Import": {
+    "prefix": "imp",
+		"body": [
+      "import ${1:*} from '${2:module}'"
+		],
+		"description": "Import"
+  },
+
+  "Module Exports": {
+    "prefix": "me",
+		"body": [
+      "module.exports = ${1:name}"
+		],
+		"description": "Module Exports"
+  },
+
+  "Module Exports Object": {
+    "prefix": "meo",
+		"body": [
+      "module.exports = {",
+      "  ${1:member}",
+      "}"
+		],
+		"description": "Module Exports Object"
+  },
+
+  "Require": {
+    "prefix": "req",
+		"body": [
+      "const ${1:module} = require('${1:module}')"
+		],
+		"description": "Require"
+  },
+
+  "Koa Ctx Arrow Function": {
+		"prefix": "ctx",
+		"body": [
+			"(ctx, next) => {$1}"
+		],
+		"description": "Koa Ctx Arrow Function"
+	},
+
+  "SetTimeout": {
+    "prefix": "sett",
+		"body": [
+      "setTimeout(() => {",
+      "  ${0}",
+      "}, ${1:delay}"
+		],
+		"description": "SetTimeout"
+  },
+
+  "SetInterval": {
+    "prefix": "seti",
+		"body": [
+      "setInterval(() => {",
+      "  ${0}",
+      "}, ${1:delay}"
+		],
+		"description": "SetInterval"
+  },
+
+  "Process NextTick": {
+    "prefix": "nt",
+		"body": [
+      "process.nextTick(() => {",
+      "  ${0}",
+      "})"
+		],
+		"description": "Process NextTick"
+  },
+
+  "Insert 'use strict' Statement": {
+    "prefix": "us",
+    "body": [
+      "'use strict'"
+		],
+		"description": "Insert 'use strict' Statement"
+  },
+
+  "Print to log": {
+		"prefix": "log",
+		"body": [
+			"console.log('--> ${1}: ', ${2})"
+		],
+		"description": "Log output to console"
+  },
+
+  "Print to error": {
+    "prefix": "err",
+		"body": [
+			"console.error('--> ${1}Error: ', ${2})"
+		],
+		"description": "Error output to console"
+  }
+}
