@@ -8,6 +8,10 @@ This extension contains code snippets for JavaScript in ES6 syntax for VS Code e
 
 All the snippets not include the final semicolon `;`.
 
+**Suggestions**
+
+- Add `"editor.snippetSuggestions": "top",` to your user settings to see these snippets on top in the suggestion popover.
+
 ### Snippets
 
 Below is a list of all available snippets and the triggers of each one. The ⇥ means the TAB key.
