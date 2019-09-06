@@ -89,7 +89,7 @@
 			"if (${1:condition}) {",
       "  ${0}",
       "} else {",
-      "  ${1}",
+      "  ${2}",
       "}"
 		],
 		"description": "If/Else Statement"
@@ -433,7 +433,7 @@
 		"body": [
 			"get ${1:property}() {",
       "  ${0}",
-      "})"
+      "}"
 		],
 		"description": "Getter"
   },
@@ -443,7 +443,7 @@
 		"body": [
 			"set ${1:property}(${2:value}) {",
       "  ${0}",
-      "})"
+      "}"
 		],
 		"description": "Setter"
   },
@@ -585,7 +585,7 @@
 		"body": [
       "setTimeout(() => {",
       "  ${0}",
-      "}, ${1:delay}"
+      "}, ${1:delay})"
 		],
 		"description": "SetTimeout"
   },
@@ -595,7 +595,7 @@
 		"body": [
       "setInterval(() => {",
       "  ${0}",
-      "}, ${1:delay}"
+      "}, ${1:delay})"
 		],
 		"description": "SetInterval"
   },
@@ -629,7 +629,7 @@
   "Print to error": {
     "prefix": "err",
 		"body": [
-			"console.error('--> ${1}Error: ', ${2})"
+			"console.error('${1}Error: ', ${2})"
 		],
 		"description": "Error output to console"
   }
