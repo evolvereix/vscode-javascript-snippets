@@ -14,9 +14,9 @@ All the snippets not include the final semicolon `;`.
 
 ### Snippets
 
-Below is a list of all available snippets and the triggers of each one. The ⇥ means the TAB key.
+Below is a list of all available snippets and the triggers of each one. The `→` means the TAB key.
 
-**Declarations**
+#### Declarations
 
 | Trigger | Content |
 | --- | --- |
@@ -30,7 +30,7 @@ Below is a list of all available snippets and the triggers of each one. The ⇥ 
 | `constd→` | `const {} = value` |
 
 
-**Flow Control**
+#### Flow Control
 
 | Trigger | Content |
 | --- | --- |
@@ -48,7 +48,7 @@ Below is a list of all available snippets and the triggers of each one. The ⇥ 
 | `trycf→` | `try {} catch () {} finally {}` |
 | `switch→` | `switch () { case return}` |
 
-**Functions**
+#### Functions
 
 | Trigger | Content |
 | --- | --- |
@@ -71,7 +71,7 @@ Below is a list of all available snippets and the triggers of each one. The ⇥ 
 | `sort→` | `.sort((a, b) => { return a -b })` |
 | `key→` | `key: value` |
 
-**Classes**
+#### Classes
 
 | Trigger | Content |
 | --- | --- |
@@ -85,14 +85,14 @@ Below is a list of all available snippets and the triggers of each one. The ⇥ 
 | `get→` | `set property(value) {}` |
 | `assign→` | `Object.assign(dest, source)` |
 
-**Types**
+#### Types
 
 | Trigger | Content |
 | --- | --- |
-| `typeof→` | `typeof source === 'undefined'` |
-| `instanceof→` | `source instanceof Object` |
+| `tof` | `typeof source === 'undefined'` |
+| `iof` | `source instanceof Object` |
 
-**Promise**
+#### Promise
 
 | Trigger | Content |
 | --- | --- |
@@ -101,7 +101,7 @@ Below is a list of all available snippets and the triggers of each one. The ⇥ 
 | `then→` | `promise.then(() => {})` |
 | `catch→` | `promise.catch(() => {})` |
 
-**ES6 Module**
+#### ES6 Module
 
 | Trigger | Content |
 | --- | --- |
@@ -110,7 +110,7 @@ Below is a list of all available snippets and the triggers of each one. The ⇥ 
 | `expf→` | `export const name = () => {}` |
 | `imp→` | `import * from 'module'` |
 
-**Node.js**
+#### Node.js
 
 | Trigger | Content |
 | --- | --- |
@@ -119,7 +119,7 @@ Below is a list of all available snippets and the triggers of each one. The ⇥ 
 | `req→` | `const module = require('module')` |
 | `ctx→` | `(ctx, next) => {$1}` |
 
-**Timer**
+#### Timer
 
 | Trigger | Content |
 | --- | --- |
@@ -127,13 +127,13 @@ Below is a list of all available snippets and the triggers of each one. The ⇥ 
 | `seti→` | `setInterval(() => {}, dealy)` |
 | `nt→` | `process.nextTick(() => {}` |
 
-**Miscellaneous**
+#### Miscellaneous
 
 | Trigger | Content |
 | --- | --- |
 | `us→` | `'use strict'` |
 
-**Console**
+#### Console
 
 | Trigger | Content |
 | --- | --- |

@@ -457,7 +457,7 @@
   },
 
   "Typeof": {
-    "prefix": "typeof",
+    "prefix": "tof",
 		"body": [
       "typeof ${1:source} === '${2:undefined}'"
 		],
@@ -465,7 +465,7 @@
   },
 
   "Instanceof": {
-    "prefix": "instanceof",
+    "prefix": "iof",
 		"body": [
       "${1:source} instanceof ${2:Object}"
 		],
