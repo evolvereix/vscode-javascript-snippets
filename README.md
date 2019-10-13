@@ -137,5 +137,7 @@ Below is a list of all available snippets and the triggers of each one. The `→
 
 | Trigger | Content |
 | --- | --- |
-| `log→` | `console.log('--> : ', )` |
-| `err→` | `console.error('--> Error: ', )` |
+| `log→` | `console.log()` |
+| `err→` | `console.error('Error: ', )` |
+| `warn→` | `console.warn()` |
+| `dir→` | `console.dir()` |
