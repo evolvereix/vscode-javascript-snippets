@@ -621,7 +621,7 @@
   "Print to log": {
 		"prefix": "log",
 		"body": [
-			"console.log('--> ${1}: ', ${2})"
+      "console.log(${0})"
 		],
 		"description": "Log output to console"
   },
@@ -632,5 +632,21 @@
 			"console.error('${1}Error: ', ${2})"
 		],
 		"description": "Error output to console"
+  },
+
+  "Print to warn": {
+    "prefix": "warn",
+		"body": [
+			"console.warn(${0})"
+		],
+		"description": "Warn output to console"
+  },
+
+  "Print to dir": {
+    "prefix": "dir",
+		"body": [
+			"console.dir(${0})"
+		],
+		"description": "Dir output to console"
   }
 }
