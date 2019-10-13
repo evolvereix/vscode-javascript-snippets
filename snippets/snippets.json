@@ -291,9 +291,9 @@
   "ForEach Loop": {
     "prefix": "fore",
 		"body": [
-			"${1}forEach((${2:item}) => {",
+			"${1}forEach((${2:item}, ${3:key}) => {",
       "  ${0}",
-      "}"
+      "})"
 		],
 		"description": "For-Of Loop"
   },
@@ -301,9 +301,9 @@
   "Array.prototype.map()": {
     "prefix": "map",
 		"body": [
-			"${1}map((${2:item}) => {",
+			"${1}map((${2:item}, ${3:key}) => {",
       "  ${0}",
-      "}"
+      "})"
 		],
 		"description": "Array.prototype.map()"
   },
@@ -321,7 +321,7 @@
   "Array.prototype.filter()": {
     "prefix": "filter",
 		"body": [
-			"${1}filter((${2:item}) => {",
+			"${1}filter((${2:item}, ${3:key}) => {",
       "  ${0}",
       "})"
 		],
