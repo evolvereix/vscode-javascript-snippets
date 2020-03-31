@@ -170,6 +170,8 @@ Below is a list of all available snippets and the triggers of each one. The `⇥
 | `race⇥` | `Promise.race()` |
 | `rej⇥` | `promise.reject()` |
 | `res⇥` | `promise.resolve()` |
+| `asy⇥` | `async` |
+| `aw⇥` | `await` |
 
 #### ES6 Module
 
