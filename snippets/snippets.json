@@ -1,6 +1,6 @@
 {  
   "Var Statement": {
-		"prefix": "var",
+		"prefix": "v",
 		"body": [
 			"var ${0}"
 		],
@@ -10,13 +10,13 @@
   "Var Assignment": {
 		"prefix": "v=",
 		"body": [
-			"var ${1:name} = ${2:value}"
+			"var ${1:name} = ${0:value}"
 		],
 		"description": "Var Assignment"
   },
 
   "Let Statement": {
-		"prefix": "let",
+		"prefix": "l",
 		"body": [
 			"let ${0}"
 		],
@@ -26,21 +26,21 @@
   "Let Assignment": {
 		"prefix": "l=",
 		"body": [
-			"let ${1:name} = ${2:value}"
+			"let ${1:name} = ${0:value}"
 		],
 		"description": "Let Assignment"
   },
 
   "Destructuring Let Assignment": {
-		"prefix": "letd",
+		"prefix": "ld",
 		"body": [
-			"let { ${1:name} } = ${2:value}"
+			"let { ${1:name} } = ${0:value}"
 		],
 		"description": "Destructuring Let Assignment"
   },
 
   "Const Statement": {
-		"prefix": "const",
+		"prefix": "c",
 		"body": [
 			"const ${0}"
 		],
@@ -48,27 +48,186 @@
   },
 
   "Const Assignment": {
-		"prefix": "const=",
+		"prefix": "c=",
 		"body": [
-			"const ${1:name} = ${2:value}"
+			"const ${1:name} = ${0:value}"
 		],
 		"description": "Const Assignment"
   },
 
   "Destructuring Const Assignment": {
-		"prefix": "constd",
+		"prefix": "cd",
 		"body": [
-			"const { ${1:name} } = ${2:value}"
+			"const { ${1:name} } = ${0:value}"
 		],
 		"description": "Destructuring Const Assignment"
+  },
+
+  "Length Statement": {
+		"prefix": "length",
+		"body": [
+			"length"
+		],
+		"description": "Length Statement"
+  },
+
+  "Break Statement": {
+		"prefix": "break",
+		"body": [
+			"break"
+		],
+		"description": "Break Statement"
+  },
+
+  "Continue Statement": {
+		"prefix": ["ct", "continue"],
+		"body": [
+			"continue"
+		],
+		"description": "Continue Statement"
+  },
+
+  "Default Keyword": {
+		"prefix": "default",
+		"body": [
+      "default:${1}",
+      "  ${0}"
+		],
+		"description": "Default Keyword"
+  },
+
+  "Debugger Statement": {
+		"prefix": "debugger",
+		"body": [
+			"debugger"
+		],
+		"description": "Debugger Statement"
+  },
+
+  "Empty Statement": {
+		"prefix": "empty",
+		"body": [
+			"empty"
+		],
+		"description": "Empty Statement"
+  },
+
+  "Return Statement": {
+		"prefix": ["ret", "return"],
+		"body": [
+			"return"
+		],
+		"description": "Return Statement"
+  },
+
+  "Throw Statement": {
+		"prefix": ["thr", "throw"],
+		"body": [
+			"throw ${0}"
+		],
+		"description": "Throw Statement"
+  },
+
+  "Yield Statement": {
+		"prefix": "yield",
+		"body": [
+			"yield ${0}"
+		],
+		"description": "Yield Statement"
+  },
+
+  "Next Statement": {
+		"prefix": "next",
+		"body": [
+			"next()"
+		],
+		"description": "Next Statement"
+  },
+
+  "As Keyword": {
+		"prefix": "as",
+		"body": [
+      "as ${0}"
+		],
+		"description": "Default Keyword"
+  },
+
+  "For Loop": {
+    "prefix": "for",
+		"body": [
+			"for (let ${1:i} = 0, ${2:len} = ${3:iterable}.length; ${1:i} < ${2:len}; ${1:i}++) {",
+      "  ${0}",
+      "}"
+		],
+		"description": "For Loop"
+  },
+
+  "Reverse For Loop": {
+    "prefix": "forr",
+		"body": [
+			"for (let ${1:i} = ${2:iterable}.length - 1; ${1:i} >= 0; ${1:i}--) {",
+      "  ${0}",
+      "}"
+		],
+		"description": "Reverse For Loop"
+  },
+
+  "Do-While Statement": {
+		"prefix": ["do", "doWhile"],
+		"body": [
+			"do {",
+      "  ${0}",
+      "} while (${1:condition})"
+		],
+		"description": "Do-While Statement"
+  },
+
+  "While Statement": {
+    "prefix": "while",
+    "body": [
+			"while (${1:condition}) {",
+      "  ${0}",
+      "}"
+		],
+		"description": "While Statement"
+  },
+
+  "For-In Statement": {
+    "prefix": "forin",
+		"body": [
+			"for (const ${1:item} in ${2:object}) {",
+      "  if (${2:object}.hasOwnProperty(${1:item})) {",
+      "    ${0}",
+      "  }",
+      "}"
+		],
+		"description": "For-In Statement. Not be used to iterate over an Array"
+  },
+
+  "For-Of Statement": {
+    "prefix": "forof",
+		"body": [
+			"for (const ${1:iterator} of ${2:object}) {",
+      "  ${0}",
+      "}"
+		],
+		"description": "For-Of Statement"
+  },
+
+  "ForEach Loop": {
+    "prefix": "fore",
+		"body": [
+			"${1}forEach((${2:item}, ${3:key}) => {",
+      "  ${0}",
+      "})"
+		],
+		"description": "ForEach Loop"
   },
 
   "If Statement": {
     "prefix": "if",
 		"body": [
-			"if (${1:condition}) {",
-      "  ${0}",
-      "}"
+			"if (${1:condition}) {${0}}"
 		],
 		"description": "If Statement"
   },
@@ -108,102 +267,81 @@
   "Ternary Operator": {
     "prefix": "ter",
 		"body": [
-			"${1:condition} ? ${2:expression} : ${3:expression}"
+			"${1:condition} ? ${2:expression} : ${0:expression}"
 		],
 		"description": "Ternary Operator"
   },
 
-  "For Loop": {
-    "prefix": "for",
-		"body": [
-			"for (let ${1:i} = 0, ${2:len} = ${3:iterable}.length; ${1:i} < ${2:len}; ${1:i}++) {",
-      "  ${4:const} ${5:element} = ${3:iterable}[${1:i}]",
-      "}"
-		],
-		"description": "For Loop"
-  },
-
-  "Reverse For Loop": {
-    "prefix": "forr",
-		"body": [
-			"for (let ${1:i} = ${2:iterable}.length - 1; ${1:i} >= 0; ${1:i}--) {",
-      "  ${0}",
-      "}"
-		],
-		"description": "Reverse For Loop"
-  },
-
-  "For-In Loop": {
-    "prefix": "forin",
-		"body": [
-			"for (let ${1:item} in ${2:object}) {",
-      "  if (${2:object}.hasOwnProperty(${1:item})) {",
-      "    ${0}",
-      "  }",
-      "}"
-		],
-		"description": "For-In Loop. Not be used to iterate over an Array"
-  },
-
-  "While Loop": {
-    "prefix": "while",
-    "body": [
-			"while (${1:condition}) {",
-      "  ${0}",
-      "}"
-		],
-		"description": "While Loop"
-  },
-
-  "Try/Catch": {
-    "prefix": "try",
-    "body": [
-			"try {",
-      "  ${0}",
-      "} catch (${1:err}) {",
-      "  ${2}",
-      "}"
-		],
-		"description": "Try/Catch"
-  },
-
-  "Try/Finally": {
-    "prefix": "tryf",
-    "body": [
-			"try {",
-      "  ${0}",
-      "} finally {",
-      "  ${1}",
-      "}"
-		],
-		"description": "Try/Finally"
-  },
-
-  "Try/Catch/Finally": {
-    "prefix": "trycf",
-    "body": [
-			"try {",
-      "  ${0}",
-      "} catch (${1:err}) {",
-      "  ${2}",
-      "} finally {",
-      "  ${3}",
-      "}"
-		],
-		"description": "Try/Catch/Finally"
-  },
-
   "Switch Case": {
-    "prefix": "sw",
+    "prefix": "switch",
     "body": [
 			"switch (${1:expr}) {",
       "  case ${2:value}:",
-      "    return ${0}",
+      "    ${0}",
+      "    ${3:break}",
       "  default:",
-      "    return",
+      "    ",
       "}"
 		],
 		"description": "Switch Case"
+  },
+
+  "Case Statement": {
+    "prefix": "case",
+    "body": [
+      "case ${1:value}:",
+      "  ${0}",
+      "  ${2:break}"
+		],
+		"description": "Case Statement"
+  },
+
+  "Try-Catch Statement": {
+    "prefix": "try",
+    "body": [
+			"try {",
+      "  ",
+      "} catch (${1:e}) {",
+      "  ${0}",
+      "}"
+		],
+		"description": "Try-Catch Statement"
+  },
+
+  "Catch Statement": {
+    "prefix": "tryc",
+    "body": [
+			"catch (${1:e}) {",
+      "  ${0}",
+      "}"
+		],
+		"description": "Catch Statement"
+  },
+
+  "Try-Finally Statement": {
+    "prefix": "tryf",
+    "body": [
+			"try {",
+      "  ",
+      "} finally {",
+      "  ${0}",
+      "}"
+		],
+		"description": "Try-Finally Statement"
+  },
+
+  "Try-Catch-Finally Statement": {
+    "prefix": "trycf",
+    "body": [
+			"try {",
+      "  ",
+      "} catch (${1:e}) {",
+      "  ",
+      "} finally {",
+      "  ${0}",
+      "}"
+		],
+		"description": "Try-Catch-Finally Statement"
   },
 
   "Named Function": {
@@ -219,7 +357,7 @@
   "Arrow Function": {
     "prefix": "af",
     "body": [
-      "(${1:args}) => ${2:statement}"
+      "(${1:args}) => ${0}"
 		],
 		"description": "Arrow Function"
   },
@@ -227,7 +365,7 @@
   "IIFE": {
     "prefix": "iife",
     "body": [
-      "((${1:args}) => {",
+      ";((${1:args}) => {",
       "  ${0}",
       "})(${2})"
 		],
@@ -257,7 +395,7 @@
   "Function.prototype.call()": {
     "prefix": "call",
     "body": [
-      "${1}call(${2:this}, ${3:args})"
+      "${1}call(${2:this}, ${0:args})"
 		],
     "description": "Function.prototype.call()"
   },
@@ -265,7 +403,7 @@
   "Function.prototype.apply()": {
     "prefix": "apply",
     "body": [
-      "${1}apply(${2:this}, ${3:args})"
+      "${1}apply(${2:this}, ${0:args})"
 		],
     "description": "Function.apply()"
   },
@@ -273,49 +411,89 @@
   "Function.prototype.bind()": {
     "prefix": "bind",
     "body": [
-      "${1}bind(${2:this}, ${3:args})"
+      "${1}bind(${2:this}, ${0:args})"
 		],
     "description": "Function.prototype.bind()"
   },
 
-  "For-Of Loop": {
-    "prefix": "forof",
-		"body": [
-			"for (let ${1:iterator} of ${2:object}) {",
-      "  ${0}",
-      "}"
-		],
-		"description": "For-Of Loop"
+  "keys() Method": {
+    "prefix": "keys",
+    "body": [
+      "${0}keys()"
+    ],
+    "description": "keys() Method"
   },
 
-  "ForEach Loop": {
-    "prefix": "fore",
-		"body": [
-			"${1}forEach((${2:item}, ${3:key}) => {",
-      "  ${0}",
-      "})"
-		],
-		"description": "For-Of Loop"
+  "values() Method": {
+    "prefix": "values",
+    "body": [
+      "${0}values()"
+    ],
+    "description": "values() Method"
   },
 
-  "Array.prototype.map()": {
-    "prefix": "map",
-		"body": [
-			"${1}map((${2:item}, ${3:key}) => {",
-      "  ${0}",
-      "})"
-		],
-		"description": "Array.prototype.map()"
+  "entries() Method": {
+    "prefix": "entries",
+    "body": [
+      "${1}entries()${0}"
+    ],
+    "description": "entries() Method"
   },
 
-  "Array.prototype.reduce()": {
-    "prefix": "reduce",
+  "toString() Method": {
+    "prefix": "toString",
+    "body": [
+      "toString()"
+    ],
+    "description": "toString() Method"
+  },
+
+  "Array.from()": {
+    "prefix": "from",
 		"body": [
-			"${1}reduce((${2:previous}, ${3:current}) => {",
-      "  ${0}",
-      "}${4:, initial})"
+      "from(${0:arrayLike})"
 		],
-		"description": "Array.prototype.reduce()"
+		"description": "Array.from()"
+  },
+
+  "Array.isArray()": {
+    "prefix": "isArray",
+		"body": [
+      "isArray(${0:value})"
+		],
+		"description": "Array.isArray()"
+  },
+
+  "Array.prototype.concat()": {
+    "prefix": ["cc", "concat"],
+    "body": [
+      "concat(${0})"
+    ],
+    "description": "Array.prototype.concat()"
+  },
+
+  "Array.prototype.copyWithin()": {
+    "prefix": ["cw", "copyWithin"],
+    "body": [
+      "copyWithin(${0})"
+    ],
+    "description": "Array.prototype.copyWithin()"
+  },
+
+  "Array.prototype.every()": {
+    "prefix": "every",
+    "body": [
+      "every(${0})"
+    ],
+    "description": "Array.prototype.every()"
+  },
+
+  "Array.prototype.fill()": {
+    "prefix": "fill",
+    "body": [
+      "fill(${0})"
+    ],
+    "description": "Array.prototype.fill()"
   },
 
   "Array.prototype.filter()": {
@@ -338,11 +516,121 @@
 		"description": "Array.prototype.find()"
   },
 
+  "Array.prototype.findIndex()": {
+    "prefix": "findIndex",
+    "body": [
+      "findIndex(${0})"
+    ],
+    "description": "Array.prototype.findIndex()"
+  },
+
+  "Array.prototype.includes()": {
+    "prefix": "includes",
+    "body": [
+      "includes(${0})"
+    ],
+    "description": "Array.prototype.includes()"
+  },
+
+  "Array.prototype.indexOf()": {
+    "prefix": "indexOf",
+    "body": [
+      "indexOf(${0})"
+    ],
+    "description": "Array.prototype.indexOf()"
+  },
+
+  "Array.prototype.join()": {
+    "prefix": "join",
+    "body": [
+      "join(${0})"
+    ],
+    "description": "Array.prototype.join()"
+  },
+
+  "Array.prototype.lastIndexOf()": {
+    "prefix": "lastIndexOf",
+    "body": [
+      "lastIndexOf(${0})"
+    ],
+    "description": "Array.prototype.lastIndexOf()"
+  },
+
+  "Array.prototype.map()": {
+    "prefix": "map",
+		"body": [
+			"${1}map((${2:item}, ${3:key}) => {",
+      "  ${0}",
+      "})"
+		],
+		"description": "Array.prototype.map()"
+  },
+
+  "Array.prototype.pop()": {
+    "prefix": "pop",
+    "body": [
+      "pop()"
+    ],
+    "description": "Array.prototype.pop()"
+  },
+
+  "Array.prototype.push()": {
+    "prefix": "push",
+    "body": [
+      "push(${0})"
+    ],
+    "description": "Array.prototype.push()"
+  },
+
+  "Array.prototype.reduce()": {
+    "prefix": "reduce",
+		"body": [
+			"${1}reduce((${2:acc}, ${3:cur}) => {",
+      "  ${0}",
+      "}${4:, initialValue})"
+		],
+		"description": "Array.prototype.reduce()"
+  },
+
+  "Array.prototype.reduceRight()": {
+    "prefix": "reduceRight",
+		"body": [
+			"${1}reduceRight((${2:acc}, ${3:cur}) => {",
+      "  ${0}",
+      "}${4:, initialValue})"
+		],
+		"description": "Array.prototype.reduceRight()"
+  },
+
+  "Array.prototype.reverse()": {
+    "prefix": "reverse",
+    "body": [
+      "reverse()"
+    ],
+    "description": "Array.prototype.reverse()"
+  },
+
+  "Array.prototype.shift()": {
+    "prefix": "shift",
+    "body": [
+      "shift()"
+    ],
+    "description": "Array.prototype.shift()"
+  },
+
+  "Array.prototype.slice()": {
+    "prefix": "slice",
+    "body": [
+      "slice(${0})"
+    ],
+    "description": "Array.prototype.slice()"
+  },
+
   "Array.prototype.some()": {
     "prefix": "some",
 		"body": [
-			"${1}some((${2:item}) => {",
-      "  return ${0}",
+			"${1}some((${2:item}, ${3:key}) => {",
+      "  ${0}",
       "})"
 		],
 		"description": "Array.prototype.some()"
@@ -351,24 +639,206 @@
   "Array.prototype.sort()": {
     "prefix": "sort",
 		"body": [
-			"${1}sort((${1:a}, ${2:b}) => { return ${1:a} - ${2:b} })"
+			"${1}sort((${1:a}, ${2:b}) => { return ${1:a} - ${2:b} })${0}"
 		],
 		"description": "Array.prototype.sort()"
   },
 
-  "Key/Value Pair": {
-    "prefix": "key",
+  "Array.prototype.splice()": {
+    "prefix": "splice",
+    "body": [
+      "splice(${0})"
+    ],
+    "description": "Array.prototype.splice()"
+  },
+
+  "Array.prototype.unshift()": {
+    "prefix": "unshift",
+    "body": [
+      "unshift(${0})"
+    ],
+    "description": "Array.prototype.unshift()"
+  },
+
+  "Object.assign()": {
+    "prefix": "assign",
+		"body": [
+			"Object.assign(${1:target}, ${0:...source})"
+		],
+		"description": "Object.assign()"
+  },
+
+  "Object.create()": {
+    "prefix": "create",
+    "body": [
+      "Object.create(${0})"
+    ],
+    "description": "Object.create()"
+  },
+
+  "Object.defineProperty()": {
+    "prefix": "defineProperty",
+    "body": [
+      "Object.defineProperty(${1:obj}, ${1:prop}, {",
+      "  configurable: ${2:false},",
+      "  enumerable: ${3:false},",
+      "  writable: ${4:false},",
+      "  value: ${5:undefined},",
+      "  ${0}",
+      "})"
+    ],
+    "description": "Object.defineProperty()"
+  },
+
+  "Object.freeze()": {
+    "prefix": "freeze",
+    "body": [
+      "Object.freeze(${0})"
+    ],
+    "description": "Object.freeze()"
+  },
+
+  "Object.fromEntries()": {
+    "prefix": "fromEntries",
+    "body": [
+      "Object.fromEntries(${0:iterable})"
+    ],
+    "description": "Object.fromEntries()"
+  },
+
+  "Object.getOwnPropertyDescriptor()": {
+    "prefix": ["getd", "getOwnPropertyDescriptor"],
+    "body": [
+      "Object.getOwnPropertyDescriptor(${1:obj}, ${0:key})"
+    ],
+    "description": "Object.getOwnPropertyDescriptor()"
+  },
+
+  "Object.getOwnPropertyDescriptors()": {
+    "prefix": ["getd", "getOwnPropertyDescriptors"],
+    "body": [
+      "Object.getOwnPropertyDescriptors(${0:obj})"
+    ],
+    "description": "Object.getOwnPropertyDescriptors()"
+  },
+
+  "Object.getOwnPropertyNames()": {
+    "prefix": ["getn", "getOwnPropertyNames"],
+    "body": [
+      "Object.getOwnPropertyNames(${0:obj})"
+    ],
+    "description": "Object.getOwnPropertyNames()"
+  },
+
+  "Object.getOwnPropertySymbols()": {
+    "prefix": ["gets", "getOwnPropertySymbols"],
+    "body": [
+      "Object.getOwnPropertySymbols(${0:obj})"
+    ],
+    "description": "Object.getOwnPropertySymbols()"
+  },
+
+  "Object.getPrototypeOf()": {
+    "prefix": ["geto", "getPrototypeOf"],
+    "body": [
+      "Object.getPrototypeOf(${0:obj})"
+    ],
+    "description": "Object.getPrototypeOf()"
+  },
+
+  "Object.is()": {
+    "prefix": "is",
+    "body": [
+      "Object.is(${1:value1}, ${0:value2})"
+    ],
+    "description": "Object.is()"
+  },
+
+  "Object.isExtensible()": {
+    "prefix": "isExtensible",
+    "body": [
+      "Object.isExtensible(${0:obj})"
+    ],
+    "description": "Object.isExtensible()"
+  },
+
+  "Object.isFrozen()": {
+    "prefix": "isFrozen",
+    "body": [
+      "Object.isFrozen(${0:obj})"
+    ],
+    "description": "Object.isFrozen()"
+  },
+
+  "Object.isSealed()": {
+    "prefix": "isSealed",
+    "body": [
+      "Object.isSealed(${0:obj})"
+    ],
+    "description": "Object.isSealed()"
+  },
+
+  "Object.preventExtensions()": {
+    "prefix": "preventExtensions",
+    "body": [
+      "Object.preventExtensions(${0:obj})"
+    ],
+    "description": "Object.preventExtensions()"
+  },
+
+  "Object.hasOwnProperty()": {
+    "prefix": "hasOwnProperty",
+    "body": [
+      "Object.hasOwnProperty(${0:item})"
+    ],
+    "description": "Object.hasOwnProperty()"
+  },
+
+  "Object.isPrototypeOf()": {
+    "prefix": "isPrototypeOf",
+    "body": [
+      "Object.isPrototypeOf(${0:obj})"
+    ],
+    "description": "Object.isPrototypeOf()"
+  },
+
+  "Object.propertyIsEnumerable()": {
+    "prefix": "propertyIsEnumerable",
+    "body": [
+      "Object.propertyIsEnumerable(${0:obj})"
+    ],
+    "description": "Object.propertyIsEnumerable()"
+  },
+  
+  "Object.seal()": {
+    "prefix": "seal",
+    "body": [
+      "Object.seal(${0:obj})"
+    ],
+    "description": "Object.seal()"
+  },
+
+  "Object.setPrototypeOf()": {
+    "prefix": "setPrototypeOf",
+    "body": [
+      "Object.setPrototypeOf(${1:obj}, ${0:null})"
+    ],
+    "description": "Object.setPrototypeOf()"
+  },
+
+  "Key-Value Pair": {
+    "prefix": ["kv", "keyValue"],
 		"body": [
 			"${1:key}: ${2:value},${0}"
 		],
-		"description": "Key/Value Pair"
+		"description": "Key-Value Pair"
   },
 
   "Class Elements": {
     "prefix": "class",
 		"body": [
       "class ${1:name} {",
-      "  constructor(${2:arguments}) {",
+      "  constructor(${2:args}) {",
       "    ${0}",
       "  }",
       "}"
@@ -377,12 +847,11 @@
   },
 
   "Class Constructor": {
-    "prefix": "constructor",
+    "prefix": ["cs", "constructor"],
 		"body": [
-      "constructor(${1:arguments}) {",
-      "  super(${1:arguments})",
+      "constructor(${1:args}) {",
       "  ${0}",
-      " }"
+      "}"
 		],
 		"description": "Class Constructor"
   },
@@ -391,8 +860,8 @@
     "prefix": "extends",
 		"body": [
       "class ${1:name} extends ${2:base} {",
-      "  constructor(${3:arguments}) {",
-      "    super(${3:arguments})",
+      "  constructor(${3:args}) {",
+      "    super(${3:args})",
       "    ${0}",
       "  }",
       "}"
@@ -401,15 +870,15 @@
   },
 
   "Class Static Statement": {
-    "prefix": "staticstatement",
+    "prefix": "staticStatement",
 		"body": [
-      "static ${1:name} = ${2}"
+      "static ${1:name} = ${0}"
 		],
 		"description": "Class Static Statement"
   },
 
   "Class Static Method": {
-    "prefix": "staticsmethod",
+    "prefix": "staticMethod",
 		"body": [
       "static ${1:name}() {",
       "  ${0}",
@@ -419,9 +888,9 @@
   },
 
   "Prototype Method": {
-    "prefix": "prototype",
+    "prefix": ["pt", "prototype"],
 		"body": [
-      "${1:Class}prototype.${2:method} = function(${3:args}) {",
+      "${1:name}.prototype.${2:method} = function(${3:args}) {",
       "  ${0}",
       "}"
 		],
@@ -448,26 +917,18 @@
 		"description": "Setter"
   },
 
-  "Object.assign()": {
-    "prefix": "assign",
-		"body": [
-			"Object.assign(${1:dest}, ${2:source})"
-		],
-		"description": "Object.assign()"
-  },
-
   "Typeof": {
-    "prefix": "tof",
+    "prefix": "typeof",
 		"body": [
-      "typeof ${1:source} === '${2:undefined}'"
+      "typeof ${1:source} === '${0:undefined}'"
 		],
 		"description": "Typeof"
   },
 
   "Instanceof": {
-    "prefix": "iof",
+    "prefix": "instanceof",
 		"body": [
-      "${1:source} instanceof ${2:Object}"
+      "${1:source} instanceof ${0:Object}"
 		],
 		"description": "Instanceof"
   },
@@ -493,9 +954,9 @@
   },
 
   "Promise.prototype.then()": {
-    "prefix": "then",
+    "prefix": "prot",
 		"body": [
-      "${1:promise}then((${2:value}) => {",
+      "${1:promise}.then((${2:res}) => {",
       "  ${0}",
       "})"
 		],
@@ -503,19 +964,69 @@
   },
 
   "Promise.prototype.catch()": {
-    "prefix": "catch",
+    "prefix": "proc",
 		"body": [
-      "${1:promise.}catch((${2:err}) => {",
+      "${1:promise}.catch((${2:e}) => {",
       "  ${0}",
       "})"
 		],
 		"description": "Promise.prototype.catch()"
   },
 
+  "Promise.prototype.finally()": {
+    "prefix": "prof",
+		"body": [
+      "${1:promise}.finally(() => {",
+      "  ${0}",
+      "})"
+		],
+		"description": "Promise.prototype.finally()"
+  },
+
+  "Promise.all()": {
+    "prefix": "all",
+		"body": [
+      "Promise.all(${0:iterable})"
+		],
+		"description": "Promise.all()"
+  },
+
+  "Promise.allSettled()": {
+    "prefix": "allSettled",
+		"body": [
+      "Promise.allSettled(${0:iterable})"
+		],
+		"description": "Promise.allSettled()"
+  },
+
+  "Promise.race()": {
+    "prefix": "race",
+		"body": [
+      "Promise.race(${0:iterable})"
+		],
+		"description": "Promise.race()"
+  },
+
+  "Promise.reject()": {
+    "prefix": "reject",
+		"body": [
+      "${1:promise}.reject(${0:reason})"
+		],
+		"description": "Promise.reject()"
+  },
+
+  "Promise.resolve()": {
+    "prefix": "resolve",
+		"body": [
+      "${1:promise}.resolve(${0:value})"
+		],
+		"description": "Promise.resolve()"
+  },
+
   "Export": {
     "prefix": "exp",
 		"body": [
-      "export ${1:member}"
+      "export ${0:member}"
 		],
 		"description": "Export"
   },
@@ -523,7 +1034,7 @@
   "Export Default": {
     "prefix": "expd",
 		"body": [
-      "export default ${1:member}"
+      "export default ${0:member}"
 		],
 		"description": "Export Default"
   },
@@ -541,15 +1052,23 @@
   "Import": {
     "prefix": "imp",
 		"body": [
-      "import ${1:*} from '${2:module}'"
+      "import ${1:*} from '${0:module}'"
 		],
 		"description": "Import"
+  },
+
+  "Import Destructuring": {
+    "prefix": "impd",
+		"body": [
+      "import { ${1:*} } from '${0:module}'"
+		],
+		"description": "Import Destructuring"
   },
 
   "Module Exports": {
     "prefix": "me",
 		"body": [
-      "module.exports = ${1:name}"
+      "module.exports = ${0:name}"
 		],
 		"description": "Module Exports"
   },
@@ -558,26 +1077,26 @@
     "prefix": "meo",
 		"body": [
       "module.exports = {",
-      "  ${1:member}",
+      "  ${0:member}",
       "}"
 		],
 		"description": "Module Exports Object"
   },
 
   "Require": {
-    "prefix": "req",
+    "prefix": "require",
 		"body": [
-      "const ${1:module} = require('${1:module}')"
+      "const ${1:name} = require('${0:module}')"
 		],
 		"description": "Require"
   },
 
-  "Koa Ctx Arrow Function": {
+  "Ctx Arrow Function": {
 		"prefix": "ctx",
 		"body": [
-			"(ctx, next) => {$1}"
+			"(ctx, next) => ${0}"
 		],
-		"description": "Koa Ctx Arrow Function"
+		"description": "Ctx Arrow Function"
 	},
 
   "SetTimeout": {
@@ -598,6 +1117,16 @@
       "}, ${1:delay})"
 		],
 		"description": "SetInterval"
+  },
+
+  "setImmediate": {
+    "prefix": "setim",
+		"body": [
+      "setImmediate(() => {",
+      "  ${0}",
+      "})"
+		],
+		"description": "setImmediate"
   },
 
   "Process NextTick": {
@@ -629,7 +1158,7 @@
   "Print to error": {
     "prefix": "err",
 		"body": [
-			"console.error('${1}Error: ', ${2})"
+			"console.error('${0} Error: ', ${1:e})"
 		],
 		"description": "Error output to console"
   },
