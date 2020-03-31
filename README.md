@@ -35,11 +35,10 @@ Below is a list of all available snippets and the triggers of each one. The `⇥
 | `def⇥` | `default` |
 | `deb⇥` | `debugger` |
 | `emp⇥` | `empty` |
-| `deb⇥` | `return` |
 | `ret⇥` | `return` |
 | `thr⇥` | `throw` |
 | `yie⇥` | `yield` |
-| `nex⇥` | `next()` |
+| `next⇥` | `next()` |
 | `as⇥` | `as` |
 
 #### Loops
@@ -66,6 +65,7 @@ Below is a list of all available snippets and the triggers of each one. The `⇥
 | `switch⇥` | `switch () { case break }` |
 | `case⇥` | `case break` |
 | `try⇥` | `try {} catch () {}` |
+| `tryc⇥` | `catch () {}` |
 | `tryf⇥` | `try {} finally {}` |
 | `trycf⇥` | `try {} catch () {} finally {}` |
 
@@ -102,11 +102,11 @@ Below is a list of all available snippets and the triggers of each one. The `⇥
 | `ind⇥` | `indexOf()` |
 | `jo⇥` | `join()` |
 | `la⇥` | `lastIndexOf()` |
-| `map⇥` | `.map(() => {})` |
+| `map⇥` | `map(() => {})` |
 | `po⇥` | `pop()` |
 | `pu⇥` | `push()` |
-| `red⇥` | `.reduce(() => {})` |
-| `redr⇥` | `.reduceRight(() => {})` |
+| `red⇥` | `reduce(() => {})` |
+| `redr⇥` | `reduceRight(() => {})` |
 | `rev⇥` | `reverse()` |
 | `shi⇥` | `shift()` |
 | `sl⇥` | `slice()` |
