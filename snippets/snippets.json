@@ -1023,6 +1023,22 @@
 		"description": "Promise.resolve()"
   },
 
+  "Async Statement": {
+    "prefix": "async",
+		"body": [
+      "async"
+		],
+		"description": "Async Statement"
+  },
+
+  "Await Statement": {
+    "prefix": "await",
+		"body": [
+      "await ${0:expr}"
+		],
+		"description": "Await Statement"
+  },
+
   "Export": {
     "prefix": "exp",
 		"body": [
