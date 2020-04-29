@@ -8,15 +8,15 @@ This extension contains code snippets for JavaScript in ES6 syntax for VS Code e
 
 All the snippets not include the final semicolon `;`.
 
-#### Suggestions
+### Suggestions
 
 Add `"editor.snippetSuggestions": "top"` to your user settings to see these snippets on top in the suggestion popover.
 
-### Snippets
+## Snippets
 
 Below is a list of all available snippets and the triggers of each one. Remember to use tab key.
 
-#### Declarations
+### Declarations
 
 <details>
 <summary>Table</summary>
@@ -46,7 +46,7 @@ Below is a list of all available snippets and the triggers of each one. Remember
 
 </details>
 
-#### Loops
+### Loops
 
 <details>
 <summary>Table</summary>
@@ -62,7 +62,7 @@ Below is a list of all available snippets and the triggers of each one. Remember
 
 </details>
 
-#### Flow Control
+### Flow Control
 
 <details>
 <summary>Table</summary>
@@ -83,7 +83,7 @@ Below is a list of all available snippets and the triggers of each one. Remember
 
 </details>
 
-#### Functions
+### Functions
 
 <details>
 <summary>Table</summary>
@@ -101,7 +101,7 @@ Below is a list of all available snippets and the triggers of each one. Remember
 
 </details>
 
-#### Common Methods
+### Common Methods
 
 <details>
 <summary>Table</summary>
@@ -117,7 +117,7 @@ Below is a list of all available snippets and the triggers of each one. Remember
 
 </details>
 
-#### Array
+### Array
 
 <details>
 <summary>Table</summary>
@@ -155,7 +155,7 @@ Below is a list of all available snippets and the triggers of each one. Remember
 
 </details>
 
-#### String
+### String
 
 <details>
 <summary>Table</summary>
@@ -192,7 +192,7 @@ Below is a list of all available snippets and the triggers of each one. Remember
 
 </details>
 
-#### Object
+### Object
 
 <details>
 <summary>Table</summary>
@@ -228,7 +228,7 @@ Below is a list of all available snippets and the triggers of each one. Remember
 
 </details>
 
-#### Classes
+### Classes
 
 <details>
 <summary>Table</summary>
@@ -246,7 +246,7 @@ Below is a list of all available snippets and the triggers of each one. Remember
 
 </details>
 
-#### Types
+### Types
 
 <details>
 <summary>Table</summary>
@@ -258,7 +258,7 @@ Below is a list of all available snippets and the triggers of each one. Remember
 
 </details>
 
-#### Promise
+### Promise
 
 <details>
 <summary>Table</summary>
@@ -280,7 +280,7 @@ Below is a list of all available snippets and the triggers of each one. Remember
 
 </details>
 
-#### ES6 Module
+### ES6 Module
 
 <details>
 <summary>Table</summary>
@@ -295,7 +295,7 @@ Below is a list of all available snippets and the triggers of each one. Remember
 
 </details>
 
-#### Node.js
+### Node.js
 
 <details>
 <summary>Table</summary>
@@ -309,7 +309,7 @@ Below is a list of all available snippets and the triggers of each one. Remember
 
 </details>
 
-#### Timer
+### Timer
 
 <details>
 <summary>Table</summary>
@@ -323,7 +323,7 @@ Below is a list of all available snippets and the triggers of each one. Remember
 
 </details>
 
-#### Miscellaneous
+### Miscellaneous
 
 <details>
 <summary>Table</summary>
@@ -334,7 +334,7 @@ Below is a list of all available snippets and the triggers of each one. Remember
 
 </details>
 
-#### Console
+### Console
 
 <details>
 <summary>Table</summary>
