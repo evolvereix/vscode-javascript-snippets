@@ -1,6 +1,6 @@
 {  
   "Var Statement": {
-		"prefix": "v",
+		"prefix": ["var", "v"],
 		"body": [
 			"var ${0}"
 		],
@@ -8,7 +8,7 @@
   },
 
   "Var Assignment": {
-		"prefix": "v=",
+		"prefix": ["var=", "v="],
 		"body": [
 			"var ${1:name} = ${0:value}"
 		],
@@ -16,7 +16,7 @@
   },
 
   "Let Statement": {
-		"prefix": "l",
+		"prefix": ["let", "l"],
 		"body": [
 			"let ${0}"
 		],
@@ -24,7 +24,7 @@
   },
 
   "Let Assignment": {
-		"prefix": "l=",
+		"prefix": ["let=", "l="],
 		"body": [
 			"let ${1:name} = ${0:value}"
 		],
@@ -40,7 +40,7 @@
   },
 
   "Const Statement": {
-		"prefix": "c",
+		"prefix": ["const", "c"],
 		"body": [
 			"const ${0}"
 		],
@@ -48,7 +48,7 @@
   },
 
   "Const Assignment": {
-		"prefix": "c=",
+		"prefix": ["const=", "c="],
 		"body": [
 			"const ${1:name} = ${0:value}"
 		],
@@ -90,8 +90,7 @@
   "Default Keyword": {
 		"prefix": "default",
 		"body": [
-      "default:${1}",
-      "  ${0}"
+      "default${0:: }"
 		],
 		"description": "Default Keyword"
   },
@@ -115,7 +114,7 @@
   "Return Statement": {
 		"prefix": ["ret", "return"],
 		"body": [
-			"return"
+			"return${0: }"
 		],
 		"description": "Return Statement"
   },
@@ -147,9 +146,17 @@
   "As Keyword": {
 		"prefix": "as",
 		"body": [
-      "as ${0}"
+      "as${0: }"
 		],
 		"description": "As Keyword"
+  },
+
+  "Key-Value Pair": {
+    "prefix": ["kv", "keyValue"],
+		"body": [
+			"${1:key}: ${2:value}${0}"
+		],
+		"description": "Key-Value Pair"
   },
 
   "For Loop": {
@@ -193,7 +200,7 @@
   },
 
   "For-In Statement": {
-    "prefix": "forin",
+    "prefix": "fori",
 		"body": [
 			"for (const ${1:item} in ${2:object}) {",
       "  if (${2:object}.hasOwnProperty(${1:item})) {",
@@ -205,7 +212,7 @@
   },
 
   "For-Of Statement": {
-    "prefix": "forof",
+    "prefix": "foro",
 		"body": [
 			"for (const ${1:iterator} of ${2:object}) {",
       "  ${0}",
@@ -214,20 +221,11 @@
 		"description": "For-Of Statement"
   },
 
-  "ForEach Loop": {
-    "prefix": "fore",
-		"body": [
-			"${1}forEach((${2:item}, ${3:key}) => {",
-      "  ${0}",
-      "})"
-		],
-		"description": "ForEach Loop"
-  },
 
   "If Statement": {
     "prefix": "if",
 		"body": [
-			"if (${1:condition}) {${0}}"
+			"if (${1:condition}) ${0}"
 		],
 		"description": "If Statement"
   },
@@ -321,9 +319,7 @@
   "Try-Finally Statement": {
     "prefix": "tryf",
     "body": [
-			"try {",
-      "  ",
-      "} finally {",
+      "finally {",
       "  ${0}",
       "}"
 		],
@@ -383,7 +379,7 @@
   },
 
   "Generator Function": {
-    "prefix": "gf",
+    "prefix": "funcg",
     "body": [
       "function* ${1:name}(${2:args}) {",
       "  ${0}",
@@ -395,7 +391,7 @@
   "Function.prototype.call()": {
     "prefix": "call",
     "body": [
-      "${1}call(${2:this}, ${0:args})"
+      "${1}call(${2:this}, ${3:args})${0}"
 		],
     "description": "Function.prototype.call()"
   },
@@ -403,7 +399,7 @@
   "Function.prototype.apply()": {
     "prefix": "apply",
     "body": [
-      "${1}apply(${2:this}, ${0:args})"
+      "${1}apply(${2:this}, ${3:args})${0}"
 		],
     "description": "Function.prototype.apply()"
   },
@@ -411,39 +407,55 @@
   "Function.prototype.bind()": {
     "prefix": "bind",
     "body": [
-      "${1}bind(${2:this}, ${0:args})"
+      "${1}bind(${2:this}${3:, args})${0}"
 		],
     "description": "Function.prototype.bind()"
   },
 
-  "keys() Method": {
-    "prefix": "keys",
+  "concat() Method": {
+    "prefix": ["cc", "concat"],
     "body": [
-      "${0}keys()"
+      "concat(${1})${0}"
     ],
-    "description": "keys() Method"
+    "description": "concat() Method"
   },
 
-  "values() Method": {
-    "prefix": "values",
+  "includes() Method": {
+    "prefix": "includes",
     "body": [
-      "${0}values()"
+      "includes(${1})${0}"
     ],
-    "description": "values() Method"
+    "description": "includes() Method"
   },
 
-  "entries() Method": {
-    "prefix": "entries",
+  "indexOf() Method": {
+    "prefix": "indexOf",
     "body": [
-      "${1}entries()${0}"
+      "indexOf(${1})${0}"
     ],
-    "description": "entries() Method"
+    "description": "indexOf() Method"
+  },
+
+  "lastIndexOf() Method": {
+    "prefix": "lastIndexOf",
+    "body": [
+      "lastIndexOf(${1})${0}"
+    ],
+    "description": "lastIndexOf() Method"
+  },
+
+  "slice() Method": {
+    "prefix": "slice",
+    "body": [
+      "slice(${1})${0}"
+    ],
+    "description": "slice() Method"
   },
 
   "toString() Method": {
     "prefix": "toString",
     "body": [
-      "toString()"
+      "toString()${0}"
     ],
     "description": "toString() Method"
   },
@@ -451,7 +463,7 @@
   "Array.from()": {
     "prefix": "from",
 		"body": [
-      "from(${0:arrayLike})"
+      "Array.from(${1:arrayLike})${0}"
 		],
 		"description": "Array.from()"
   },
@@ -459,31 +471,39 @@
   "Array.isArray()": {
     "prefix": "isArray",
 		"body": [
-      "isArray(${0:value})"
+      "Array.isArray(${1:value})${0}"
 		],
 		"description": "Array.isArray()"
   },
 
-  "Array.prototype.concat()": {
-    "prefix": ["cc", "concat"],
-    "body": [
-      "concat(${0})"
-    ],
-    "description": "Array.prototype.concat()"
+  "Array.of()": {
+    "prefix": "of",
+		"body": [
+      "Array.of(${1:value})${0}"
+		],
+		"description": "Array.isArray()"
   },
 
   "Array.prototype.copyWithin()": {
     "prefix": ["cw", "copyWithin"],
     "body": [
-      "copyWithin(${0})"
+      "copyWithin(${1})${0}"
     ],
     "description": "Array.prototype.copyWithin()"
+  },
+
+  "Array.prototype.entries()": {
+    "prefix": "entries",
+    "body": [
+      "${1}entries()${0}"
+    ],
+    "description": "Array.prototype.entries()"
   },
 
   "Array.prototype.every()": {
     "prefix": "every",
     "body": [
-      "every(${0})"
+      "every(${1})${0}"
     ],
     "description": "Array.prototype.every()"
   },
@@ -491,7 +511,7 @@
   "Array.prototype.fill()": {
     "prefix": "fill",
     "body": [
-      "fill(${0})"
+      "fill(${1})${0}"
     ],
     "description": "Array.prototype.fill()"
   },
@@ -519,41 +539,53 @@
   "Array.prototype.findIndex()": {
     "prefix": "findIndex",
     "body": [
-      "findIndex(${0})"
+      "findIndex(${1})${0}"
     ],
     "description": "Array.prototype.findIndex()"
   },
 
-  "Array.prototype.includes()": {
-    "prefix": "includes",
+  "Array.prototype.flat()": {
+    "prefix": "flat",
     "body": [
-      "includes(${0})"
+      "flat(${1:Infinity})${0}"
     ],
-    "description": "Array.prototype.includes()"
+    "description": "Array.prototype.flat()"
   },
 
-  "Array.prototype.indexOf()": {
-    "prefix": "indexOf",
+  "Array.prototype.flatMap()": {
+    "prefix": "flatMap",
     "body": [
-      "indexOf(${0})"
+      "${1}flatMap((${2:item}, ${3:key}) => {",
+      "  ${0}",
+      "})"
     ],
-    "description": "Array.prototype.indexOf()"
+    "description": "Array.prototype.flatMap()"
+  },
+
+  "Array.prototype.forEach()": {
+    "prefix": "fore",
+		"body": [
+			"${1}forEach((${2:item}, ${3:key}) => {",
+      "  ${0}",
+      "})"
+		],
+		"description": "Array.prototype.forEach()"
   },
 
   "Array.prototype.join()": {
     "prefix": "join",
     "body": [
-      "join(${0})"
+      "join(${1})${0}"
     ],
     "description": "Array.prototype.join()"
   },
 
-  "Array.prototype.lastIndexOf()": {
-    "prefix": "lastIndexOf",
+  "Array.prototype.keys()": {
+    "prefix": "keys",
     "body": [
-      "lastIndexOf(${0})"
+      "${1}keys()${0}"
     ],
-    "description": "Array.prototype.lastIndexOf()"
+    "description": "Array.prototype.keys()"
   },
 
   "Array.prototype.map()": {
@@ -569,7 +601,7 @@
   "Array.prototype.pop()": {
     "prefix": "pop",
     "body": [
-      "pop()"
+      "pop()${0}"
     ],
     "description": "Array.prototype.pop()"
   },
@@ -577,7 +609,7 @@
   "Array.prototype.push()": {
     "prefix": "push",
     "body": [
-      "push(${0})"
+      "push(${1})${0}"
     ],
     "description": "Array.prototype.push()"
   },
@@ -618,14 +650,6 @@
     "description": "Array.prototype.shift()"
   },
 
-  "Array.prototype.slice()": {
-    "prefix": "slice",
-    "body": [
-      "slice(${0})"
-    ],
-    "description": "Array.prototype.slice()"
-  },
-
   "Array.prototype.some()": {
     "prefix": "some",
 		"body": [
@@ -639,7 +663,7 @@
   "Array.prototype.sort()": {
     "prefix": "sort",
 		"body": [
-			"${1}sort((${1:a}, ${2:b}) => { return ${1:a} - ${2:b} })${0}"
+			"${1}sort((${2:a}, ${3:b}) => ${2:a} - ${3:b})${0}"
 		],
 		"description": "Array.prototype.sort()"
   },
@@ -647,23 +671,255 @@
   "Array.prototype.splice()": {
     "prefix": "splice",
     "body": [
-      "splice(${0})"
+      "splice(${1})${0}"
     ],
     "description": "Array.prototype.splice()"
+  },
+
+  "Array.prototype.toLocaleString()": {
+    "prefix": ["tls", "toLocaleString"],
+    "body": [
+      "toLocaleString(${1})${0}"
+    ],
+    "description": "Array.prototype.toLocaleString()"
   },
 
   "Array.prototype.unshift()": {
     "prefix": "unshift",
     "body": [
-      "unshift(${0})"
+      "unshift(${1})${0}"
     ],
     "description": "Array.prototype.unshift()"
+  },
+
+  "Array.prototype.values()": {
+    "prefix": "values",
+    "body": [
+      "${1}values()${0}"
+    ],
+    "description": "Array.prototype.values()"
+  },
+
+  "String.fromCharCode()": {
+    "prefix": ["fromch", "fromCharCode"],
+    "body": [
+      "String.fromCharCode(${1})${0}"
+    ],
+    "description": "String.fromCharCode()"
+  },
+  
+  "String.fromCodePoint()": {
+    "prefix": ["fromco", "fromCodePoint"],
+    "body": [
+      "String.fromCodePoint(${1})${0}"
+    ],
+    "description": "String.fromCodePoint()"
+  },
+  
+  "String.raw()": {
+    "prefix": "raw",
+    "body": [
+      "String.raw(${1})${0}"
+    ],
+    "description": "String.raw()"
+  },
+
+  "String.prototype.charAt()": {
+    "prefix": "charAt",
+    "body": [
+      "${1:str.}charAt(${2})${0}"
+    ],
+    "description": "String.prototype.charAt()"
+  },
+  
+  "String.prototype.charCodeAt()": {
+    "prefix": "charCodeAt",
+    "body": [
+      "${1:str.}charCodeAt(${2})${0}"
+    ],
+    "description": "String.prototype.charCodeAt()"
+  },
+
+  "String.prototype.codePointAt()": {
+    "prefix": "codePointAt",
+    "body": [
+      "${1:str.}codePointAt(${2})${0}"
+    ],
+    "description": "String.prototype.codePointAt()"
+  },
+
+  "String.prototype.endsWith()": {
+    "prefix": "endsWith",
+    "body": [
+      "${1:str.}endsWith(${2}${3:, length})${0}"
+    ],
+    "description": "String.prototype.endsWith()"
+  },
+
+  "String.prototype.localeCompare()": {
+    "prefix": "localeCompare",
+    "body": [
+      "${1:str.}localeCompare(${2})${0}"
+    ],
+    "description": "String.prototype.localeCompare()"
+  },
+
+  "String.prototype.match()": {
+    "prefix": "match",
+    "body": [
+      "${1:str.}match(${2:regexp})${0}"
+    ],
+    "description": "String.prototype.match()"
+  },
+
+  "String.prototype.matchAll()": {
+    "prefix": "matchAll",
+    "body": [
+      "${1:str.}matchAll(${2:regexp})${0}"
+    ],
+    "description": "String.prototype.matchAll()"
+  },
+
+  "String.prototype.normalize()": {
+    "prefix": "normalize",
+    "body": [
+      "${1:str.}normalize(${2})${0}"
+    ],
+    "description": "String.prototype.normalize()"
+  },
+ 
+  "String.prototype.padEnd()": {
+    "prefix": "padEnd",
+    "body": [
+      "${1:str.}padEnd(${2})${0}"
+    ],
+    "description": "String.prototype.padEnd()"
+  },
+
+  "String.prototype.padStart()": {
+    "prefix": "padStart",
+    "body": [
+      "${1:str.}padStart(${2})${0}"
+    ],
+    "description": "String.prototype.padStart()"
+  },
+
+  "String.prototype.repeat()": {
+    "prefix": "repeat",
+    "body": [
+      "${1:str.}repeat(${2:count})${0}"
+    ],
+    "description": "String.prototype.repeat()"
+  },
+
+  "String.prototype.replace()": {
+    "prefix": "replace",
+    "body": [
+      "${1:str.}replace(${2}, ${3})${0}"
+    ],
+    "description": "String.prototype.replace()"
+  },
+
+  "String.prototype.search()": {
+    "prefix": "search",
+    "body": [
+      "${1:str.}search(${2:regexp})${0}"
+    ],
+    "description": "String.prototype.search()"
+  },
+
+  "String.prototype.split()": {
+    "prefix": "split",
+    "body": [
+      "${1:str.}split(${2})${0}"
+    ],
+    "description": "String.prototype.split()"
+  },
+
+  "String.prototype.startsWith()": {
+    "prefix": "startsWith",
+    "body": [
+      "${1:str.}startsWith(${2})${0}"
+    ],
+    "description": "String.prototype.startsWith()"
+  },
+
+  "String.prototype.substring()": {
+    "prefix": "substring",
+    "body": [
+      "${1:str.}substring(${2})${0}"
+    ],
+    "description": "String.prototype.substring()"
+  },
+
+  "String.prototype.toLocaleLowerCase()": {
+    "prefix": ["tll", "toLocaleLowerCase"],
+    "body": [
+      "${1:str.}toLocaleLowerCase(${2})${0}"
+    ],
+    "description": "String.prototype.toLocaleLowerCase()"
+  },
+
+  "String.prototype.toLocaleUpperCase()": {
+    "prefix": ["tlu", "toLocaleUpperCase"],
+    "body": [
+      "${1:str.}toLocaleUpperCase(${2})${0}"
+    ],
+    "description": "String.prototype.toLocaleUpperCase()"
+  },
+
+  "String.prototype.toLowerCase()": {
+    "prefix": ["tlc", "toLowerCase"],
+    "body": [
+      "${1:str.}toLowerCase(${2})${0}"
+    ],
+    "description": "String.prototype.toLowerCase()"
+  },
+  
+  "String.prototype.toUpperCase()": {
+    "prefix": ["tou", "toUpperCase"],
+    "body": [
+      "${1:str.}toUpperCase()${0}"
+    ],
+    "description": "String.prototype.toUpperCase()"
+  },
+
+  "String.prototype.trim()": {
+    "prefix": "trim",
+    "body": [
+      "${1:str.}trim()${0}"
+    ],
+    "description": "String.prototype.trim()"
+  },
+  
+  "String.prototype.trimEnd()": {
+    "prefix": "trimEnd",
+    "body": [
+      "${1:str.}trimEnd()${0}"
+    ],
+    "description": "String.prototype.trimEnd()"
+  },
+
+  "String.prototype.trimStart()": {
+    "prefix": "trimStart",
+    "body": [
+      "${1:str.}trimStart()${0}"
+    ],
+    "description": "String.prototype.trimStart()"
+  },
+
+  "String.prototype.valueOf()": {
+    "prefix": "valueOf",
+    "body": [
+      "${1:str.}valueOf()${0}"
+    ],
+    "description": "String.prototype.valueOf()"
   },
 
   "Object.assign()": {
     "prefix": "assign",
 		"body": [
-			"Object.assign(${1:target}, ${0:...source})"
+			"Object.assign(${1:target}, ${2:...source})${0}"
 		],
 		"description": "Object.assign()"
   },
@@ -671,13 +927,27 @@
   "Object.create()": {
     "prefix": "create",
     "body": [
-      "Object.create(${0})"
+      "Object.create(${1})${0}"
     ],
     "description": "Object.create()"
   },
 
+  "Object.defineProperties()": {
+    "prefix": ["dp", "defineProperties"],
+    "body": [
+      "Object.defineProperties(${1:obj}, {",
+      "  configurable: ${2:false},",
+      "  enumerable: ${3:false},",
+      "  writable: ${4:false},",
+      "  value: ${5:undefined},",
+      "  ${0}",
+      "})"
+    ],
+    "description": "Object.defineProperties()"
+  },
+
   "Object.defineProperty()": {
-    "prefix": "defineProperty",
+    "prefix": ["dp", "defineProperty"],
     "body": [
       "Object.defineProperty(${1:obj}, ${1:prop}, {",
       "  configurable: ${2:false},",
@@ -690,10 +960,18 @@
     "description": "Object.defineProperty()"
   },
 
+  "Object.entries()": {
+    "prefix": "entries",
+    "body": [
+      "Object.entries(${1})${0}"
+    ],
+    "description": "Object.entries()"
+  },
+
   "Object.freeze()": {
     "prefix": "freeze",
     "body": [
-      "Object.freeze(${0})"
+      "Object.freeze(${1})${0}"
     ],
     "description": "Object.freeze()"
   },
@@ -701,47 +979,47 @@
   "Object.fromEntries()": {
     "prefix": "fromEntries",
     "body": [
-      "Object.fromEntries(${0:iterable})"
+      "Object.fromEntries(${1:iterable})${0}"
     ],
     "description": "Object.fromEntries()"
   },
 
   "Object.getOwnPropertyDescriptor()": {
-    "prefix": ["getd", "getOwnPropertyDescriptor"],
+    "prefix": ["gopd", "getOwnPropertyDescriptor"],
     "body": [
-      "Object.getOwnPropertyDescriptor(${1:obj}, ${0:key})"
+      "Object.getOwnPropertyDescriptor(${1:obj}, ${2:key})${0}"
     ],
     "description": "Object.getOwnPropertyDescriptor()"
   },
 
   "Object.getOwnPropertyDescriptors()": {
-    "prefix": ["getd", "getOwnPropertyDescriptors"],
+    "prefix": ["gopd", "getOwnPropertyDescriptors"],
     "body": [
-      "Object.getOwnPropertyDescriptors(${0:obj})"
+      "Object.getOwnPropertyDescriptors(${1:obj})${0}"
     ],
     "description": "Object.getOwnPropertyDescriptors()"
   },
 
   "Object.getOwnPropertyNames()": {
-    "prefix": ["getn", "getOwnPropertyNames"],
+    "prefix": ["gopn", "getOwnPropertyNames"],
     "body": [
-      "Object.getOwnPropertyNames(${0:obj})"
+      "Object.getOwnPropertyNames(${1:obj})${0}"
     ],
     "description": "Object.getOwnPropertyNames()"
   },
 
   "Object.getOwnPropertySymbols()": {
-    "prefix": ["gets", "getOwnPropertySymbols"],
+    "prefix": ["gops", "getOwnPropertySymbols"],
     "body": [
-      "Object.getOwnPropertySymbols(${0:obj})"
+      "Object.getOwnPropertySymbols(${1:obj})${0}"
     ],
     "description": "Object.getOwnPropertySymbols()"
   },
 
   "Object.getPrototypeOf()": {
-    "prefix": ["geto", "getPrototypeOf"],
+    "prefix": ["gpo", "getPrototypeOf"],
     "body": [
-      "Object.getPrototypeOf(${0:obj})"
+      "Object.getPrototypeOf(${1:obj})${0}"
     ],
     "description": "Object.getPrototypeOf()"
   },
@@ -749,7 +1027,7 @@
   "Object.is()": {
     "prefix": "is",
     "body": [
-      "Object.is(${1:value1}, ${0:value2})"
+      "Object.is(${1:value1}, ${2:value2})${0}"
     ],
     "description": "Object.is()"
   },
@@ -765,7 +1043,7 @@
   "Object.isFrozen()": {
     "prefix": "isFrozen",
     "body": [
-      "Object.isFrozen(${0:obj})"
+      "Object.isFrozen(${1:obj})${0}"
     ],
     "description": "Object.isFrozen()"
   },
@@ -773,47 +1051,31 @@
   "Object.isSealed()": {
     "prefix": "isSealed",
     "body": [
-      "Object.isSealed(${0:obj})"
+      "Object.isSealed(${1:obj})${0}"
     ],
     "description": "Object.isSealed()"
   },
 
-  "Object.preventExtensions()": {
-    "prefix": "preventExtensions",
+  "Object.keys()": {
+    "prefix": "keys",
     "body": [
-      "Object.preventExtensions(${0:obj})"
+      "Object.keys(${1:obj})${0}"
+    ],
+    "description": "Object.keys()"
+  },
+
+  "Object.preventExtensions()": {
+    "prefix": ["pe", "preventExtensions"],
+    "body": [
+      "Object.preventExtensions(${1:obj})${0}"
     ],
     "description": "Object.preventExtensions()"
   },
 
-  "Object.hasOwnProperty()": {
-    "prefix": "hasOwnProperty",
-    "body": [
-      "Object.hasOwnProperty(${0:item})"
-    ],
-    "description": "Object.hasOwnProperty()"
-  },
-
-  "Object.isPrototypeOf()": {
-    "prefix": "isPrototypeOf",
-    "body": [
-      "Object.isPrototypeOf(${0:obj})"
-    ],
-    "description": "Object.isPrototypeOf()"
-  },
-
-  "Object.propertyIsEnumerable()": {
-    "prefix": "propertyIsEnumerable",
-    "body": [
-      "Object.propertyIsEnumerable(${0:obj})"
-    ],
-    "description": "Object.propertyIsEnumerable()"
-  },
-  
   "Object.seal()": {
     "prefix": "seal",
     "body": [
-      "Object.seal(${0:obj})"
+      "Object.seal(${1:obj})${0}"
     ],
     "description": "Object.seal()"
   },
@@ -821,17 +1083,59 @@
   "Object.setPrototypeOf()": {
     "prefix": "setPrototypeOf",
     "body": [
-      "Object.setPrototypeOf(${1:obj}, ${0:null})"
+      "Object.setPrototypeOf(${1:obj}, ${2:null})${0}"
     ],
     "description": "Object.setPrototypeOf()"
   },
+  
+  "Object.values()": {
+    "prefix": "values",
+    "body": [
+      "Object.values(${1:obj})${0}"
+    ],
+    "description": "Object.values()"
+  },
 
-  "Key-Value Pair": {
-    "prefix": ["kv", "keyValue"],
-		"body": [
-			"${1:key}: ${2:value},${0}"
-		],
-		"description": "Key-Value Pair"
+  "Object.prototype.hasOwnProperty()": {
+    "prefix": "hasOwnProperty",
+    "body": [
+      "${1:obj.}hasOwnProperty(${2:item})${0}"
+    ],
+    "description": "Object.prototype.hasOwnProperty()"
+  },
+
+  "Object.prototype.isPrototypeOf()": {
+    "prefix": "isPrototypeOf",
+    "body": [
+      "${1:prototypeObj.}isPrototypeOf(${2:obj})${0}"
+    ],
+    "description": "Object.prototype.isPrototypeOf()"
+  },
+
+  "Object.prototype.propertyIsEnumerable()": {
+    "prefix": ["pi", "propertyIsEnumerable"],
+    "body": [
+      "propertyIsEnumerable(${1:obj})${0}"
+    ],
+    "description": "Object.prototype.propertyIsEnumerable()"
+  },
+
+  "Object.prototype.toLocaleString()": {
+    "prefix": ["tls", "tolocalestring"],
+    "body": [
+      "toLocaleString(${1:obj})${0}"
+    ],
+    "description": "Object.prototype.toLocaleString()"
+  },
+
+  "Object.prototype.valueOf()": {
+    "prefix": "valueOf",
+    "body": [
+      "${1:object}.${2:prototype}.valueOf = function () {",
+      "  ${0}",
+      "}"
+    ],
+    "description": "Object.prototype.valueOf()"
   },
 
   "Class Elements": {
@@ -890,7 +1194,7 @@
   "Prototype Method": {
     "prefix": ["pt", "prototype"],
 		"body": [
-      "${1:name}.prototype.${2:method} = function(${3:args}) {",
+      "${1:name}.prototype.${2:method} = function (${3:args}) {",
       "  ${0}",
       "}"
 		],
@@ -928,7 +1232,7 @@
   "Instanceof": {
     "prefix": "instanceof",
 		"body": [
-      "${1:source} instanceof ${0:Object}"
+      "${1}instanceof ${0:Object}"
 		],
 		"description": "Instanceof"
   },
@@ -944,7 +1248,7 @@
   },
 
   "Promise": {
-    "prefix": "pro",
+    "prefix": ["pro", "promise"],
 		"body": [
       "new Promise((resolve, reject) => {",
       "  ${0:resolve()}",
@@ -954,9 +1258,9 @@
   },
 
   "Promise.prototype.then()": {
-    "prefix": "prot",
+    "prefix": ["prot", "then"],
 		"body": [
-      "${1:promise}.then((${2:res}) => {",
+      "${1:promise.}then((${2:res}) => {",
       "  ${0}",
       "})"
 		],
@@ -964,9 +1268,9 @@
   },
 
   "Promise.prototype.catch()": {
-    "prefix": "proc",
+    "prefix": ["proc", "catch"],
 		"body": [
-      "${1:promise}.catch((${2:e}) => {",
+      "${1:promise.}catch((${2:e}) => {",
       "  ${0}",
       "})"
 		],
@@ -974,9 +1278,9 @@
   },
 
   "Promise.prototype.finally()": {
-    "prefix": "prof",
+    "prefix": ["prof", "finally"],
 		"body": [
-      "${1:promise}.finally(() => {",
+      "${1:promise.}finally(() => {",
       "  ${0}",
       "})"
 		],
@@ -1010,7 +1314,7 @@
   "Promise.reject()": {
     "prefix": "reject",
 		"body": [
-      "${1:promise}.reject(${0:reason})"
+      "${1:promise.}reject(${0})"
 		],
 		"description": "Promise.reject()"
   },
@@ -1018,7 +1322,7 @@
   "Promise.resolve()": {
     "prefix": "resolve",
 		"body": [
-      "${1:promise}.resolve(${0:value})"
+      "${1:promise.}resolve(${0})"
 		],
 		"description": "Promise.resolve()"
   },
@@ -1039,7 +1343,7 @@
 		"description": "Await Statement"
   },
 
-  "Export": {
+  "ES Export": {
     "prefix": "exp",
 		"body": [
       "export ${0:member}"
@@ -1047,7 +1351,7 @@
 		"description": "Export"
   },
 
-  "Export Default": {
+  "ES Export Default": {
     "prefix": "expd",
 		"body": [
       "export default ${0:member}"
@@ -1055,7 +1359,7 @@
 		"description": "Export Default"
   },
 
-  "Export Function": {
+  "ES Export Function": {
     "prefix": "expf",
 		"body": [
       "export const ${1:name} = (${2:args}) => {",
@@ -1065,7 +1369,7 @@
 		"description": "Export Function"
   },
 
-  "Import": {
+  "ES Import": {
     "prefix": "imp",
 		"body": [
       "import ${1:*} from '${0:module}'"
@@ -1073,38 +1377,38 @@
 		"description": "Import"
   },
 
-  "Import Destructuring": {
+  "ES Import Destructuring": {
     "prefix": "impd",
 		"body": [
       "import { ${1:*} } from '${0:module}'"
 		],
-		"description": "Import Destructuring"
+		"description": "ES Import Destructuring"
   },
 
-  "Module Exports": {
+  "CommonJS Module Exports": {
     "prefix": "me",
 		"body": [
       "module.exports = ${0:name}"
 		],
-		"description": "Module Exports"
+		"description": "CommonJS Module Exports"
   },
 
-  "Module Exports Object": {
+  "CommonJS Module Exports Object": {
     "prefix": "meo",
 		"body": [
       "module.exports = {",
       "  ${0:member}",
       "}"
 		],
-		"description": "Module Exports Object"
+		"description": "CommonJS Module Exports Object"
   },
 
-  "Require": {
+  "CommonJS Require": {
     "prefix": "require",
 		"body": [
-      "const ${1:name} = require('${0:module}')"
+      "${1}require('${0:module}')"
 		],
-		"description": "Require"
+		"description": "CommonJS Require"
   },
 
   "Ctx Arrow Function": {
