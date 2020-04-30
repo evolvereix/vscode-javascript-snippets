@@ -163,7 +163,7 @@
     "prefix": "for",
 		"body": [
 			"for (let ${1:i} = 0, ${2:len} = ${3:iterable}.length; ${1:i} < ${2:len}; ${1:i}++) {",
-      "  ${0}",
+      "\t${0}",
       "}"
 		],
 		"description": "For Loop"
@@ -173,7 +173,7 @@
     "prefix": "forr",
 		"body": [
 			"for (let ${1:i} = ${2:iterable}.length - 1; ${1:i} >= 0; ${1:i}--) {",
-      "  ${0}",
+      "\t${0}",
       "}"
 		],
 		"description": "Reverse For Loop"
@@ -183,7 +183,7 @@
 		"prefix": ["do", "doWhile"],
 		"body": [
 			"do {",
-      "  ${0}",
+      "\t${0}",
       "} while (${1:condition})"
 		],
 		"description": "Do-While Statement"
@@ -193,7 +193,7 @@
     "prefix": "while",
     "body": [
 			"while (${1:condition}) {",
-      "  ${0}",
+      "\t${0}",
       "}"
 		],
 		"description": "While Statement"
@@ -203,9 +203,9 @@
     "prefix": "fori",
 		"body": [
 			"for (const ${1:item} in ${2:object}) {",
-      "  if (${2:object}.hasOwnProperty(${1:item})) {",
-      "    ${0}",
-      "  }",
+      "\tif (${2:object}.hasOwnProperty(${1:item})) {",
+      "\t\t${0}",
+      "\t}",
       "}"
 		],
 		"description": "For-In Statement. Not be used to iterate over an Array"
@@ -215,7 +215,7 @@
     "prefix": "foro",
 		"body": [
 			"for (const ${1:iterator} of ${2:object}) {",
-      "  ${0}",
+      "\t${0}",
       "}"
 		],
 		"description": "For-Of Statement"
@@ -234,7 +234,7 @@
     "prefix": "el",
 		"body": [
 			"else {",
-      "  ${0}",
+      "\t${0}",
       "}"
 		],
 		"description": "Else Statement"
@@ -244,9 +244,9 @@
     "prefix": "ife",
 		"body": [
 			"if (${1:condition}) {",
-      "  ${0}",
+      "\t${0}",
       "} else {",
-      "  ${2}",
+      "\t${2}",
       "}"
 		],
 		"description": "If-Else Statement"
@@ -256,7 +256,7 @@
     "prefix": "eli",
 		"body": [
 			"else if (${1:condition}) {",
-      "  ${0}",
+      "\t${0}",
       "}"
 		],
 		"description": "Else-If Statement"
@@ -274,11 +274,11 @@
     "prefix": "switch",
     "body": [
 			"switch (${1:expr}) {",
-      "  case ${2:value}:",
-      "    ${0}",
-      "    ${3:break}",
-      "  default:",
-      "    ",
+      "\tcase ${2:value}:",
+      "\t\t${0}",
+      "\t\t${3:break}",
+      "\tdefault:",
+      "\t\t",
       "}"
 		],
 		"description": "Switch Case"
@@ -288,8 +288,8 @@
     "prefix": "case",
     "body": [
       "case ${1:value}:",
-      "  ${0}",
-      "  ${2:break}"
+      "\t${0}",
+      "\t${2:break}"
 		],
 		"description": "Case Statement"
   },
@@ -298,9 +298,9 @@
     "prefix": "try",
     "body": [
 			"try {",
-      "  ",
+      "\t",
       "} catch (${1:e}) {",
-      "  ${0}",
+      "\t${0}",
       "}"
 		],
 		"description": "Try-Catch Statement"
@@ -310,7 +310,7 @@
     "prefix": "tryc",
     "body": [
 			"catch (${1:e}) {",
-      "  ${0}",
+      "\t${0}",
       "}"
 		],
 		"description": "Catch Statement"
@@ -320,7 +320,7 @@
     "prefix": "tryf",
     "body": [
       "finally {",
-      "  ${0}",
+      "\t${0}",
       "}"
 		],
 		"description": "Try-Finally Statement"
@@ -330,11 +330,11 @@
     "prefix": "trycf",
     "body": [
 			"try {",
-      "  ",
+      "\t",
       "} catch (${1:e}) {",
-      "  ",
+      "\t",
       "} finally {",
-      "  ${0}",
+      "\t${0}",
       "}"
 		],
 		"description": "Try-Catch-Finally Statement"
@@ -344,7 +344,7 @@
     "prefix": "func",
     "body": [
       "function ${1:name}(${2:args}) {",
-      "  ${0}",
+      "\t${0}",
       "}"
 		],
 		"description": "Named Function"
@@ -362,7 +362,7 @@
     "prefix": "iife",
     "body": [
       ";((${1:args}) => {",
-      "  ${0}",
+      "\t${0}",
       "})(${2})"
 		],
     "description": "IIFE"
@@ -372,7 +372,7 @@
     "prefix": "afn",
     "body": [
       "const ${1:name} = (${2:args}) => {",
-      "  ${0}",
+      "\t${0}",
       "}"
 		],
 		"description": "Named Arrow Function Expressions"
@@ -382,7 +382,7 @@
     "prefix": "funcg",
     "body": [
       "function* ${1:name}(${2:args}) {",
-      "  ${0}",
+      "\t${0}",
       "}"
 		],
 		"description": "Generator Function"
@@ -520,7 +520,7 @@
     "prefix": "filter",
 		"body": [
 			"${1}filter((${2:item}, ${3:key}) => {",
-      "  ${0}",
+      "\t${0}",
       "})"
 		],
 		"description": "Array.prototype.filter()"
@@ -530,7 +530,7 @@
     "prefix": "find",
 		"body": [
 			"${1}find((${2:item}) => {",
-      "  ${0}",
+      "\t${0}",
       "})"
 		],
 		"description": "Array.prototype.find()"
@@ -556,7 +556,7 @@
     "prefix": "flatMap",
     "body": [
       "${1}flatMap((${2:item}, ${3:key}) => {",
-      "  ${0}",
+      "\t${0}",
       "})"
     ],
     "description": "Array.prototype.flatMap()"
@@ -566,7 +566,7 @@
     "prefix": "fore",
 		"body": [
 			"${1}forEach((${2:item}, ${3:key}) => {",
-      "  ${0}",
+      "\t${0}",
       "})"
 		],
 		"description": "Array.prototype.forEach()"
@@ -592,7 +592,7 @@
     "prefix": "map",
 		"body": [
 			"${1}map((${2:item}, ${3:key}) => {",
-      "  ${0}",
+      "\t${0}",
       "})"
 		],
 		"description": "Array.prototype.map()"
@@ -618,7 +618,7 @@
     "prefix": "reduce",
 		"body": [
 			"${1}reduce((${2:acc}, ${3:cur}) => {",
-      "  ${0}",
+      "\t${0}",
       "}${4:, initialValue})"
 		],
 		"description": "Array.prototype.reduce()"
@@ -628,7 +628,7 @@
     "prefix": "reduceRight",
 		"body": [
 			"${1}reduceRight((${2:acc}, ${3:cur}) => {",
-      "  ${0}",
+      "\t${0}",
       "}${4:, initialValue})"
 		],
 		"description": "Array.prototype.reduceRight()"
@@ -654,7 +654,7 @@
     "prefix": "some",
 		"body": [
 			"${1}some((${2:item}, ${3:key}) => {",
-      "  ${0}",
+      "\t${0}",
       "})"
 		],
 		"description": "Array.prototype.some()"
@@ -936,11 +936,11 @@
     "prefix": ["dp", "defineProperties"],
     "body": [
       "Object.defineProperties(${1:obj}, {",
-      "  configurable: ${2:false},",
-      "  enumerable: ${3:false},",
-      "  writable: ${4:false},",
-      "  value: ${5:undefined},",
-      "  ${0}",
+      "\tconfigurable: ${2:false},",
+      "\tenumerable: ${3:false},",
+      "\twritable: ${4:false},",
+      "\tvalue: ${5:undefined},",
+      "\t${0}",
       "})"
     ],
     "description": "Object.defineProperties()"
@@ -950,11 +950,11 @@
     "prefix": ["dp", "defineProperty"],
     "body": [
       "Object.defineProperty(${1:obj}, ${1:prop}, {",
-      "  configurable: ${2:false},",
-      "  enumerable: ${3:false},",
-      "  writable: ${4:false},",
-      "  value: ${5:undefined},",
-      "  ${0}",
+      "\tconfigurable: ${2:false},",
+      "\tenumerable: ${3:false},",
+      "\twritable: ${4:false},",
+      "\tvalue: ${5:undefined},",
+      "\t${0}",
       "})"
     ],
     "description": "Object.defineProperty()"
@@ -1132,7 +1132,7 @@
     "prefix": "valueOf",
     "body": [
       "${1:object}.${2:prototype}.valueOf = function () {",
-      "  ${0}",
+      "\t${0}",
       "}"
     ],
     "description": "Object.prototype.valueOf()"
@@ -1142,9 +1142,9 @@
     "prefix": "class",
 		"body": [
       "class ${1:name} {",
-      "  constructor(${2:args}) {",
-      "    ${0}",
-      "  }",
+      "\tconstructor(${2:args}) {",
+      "\t\t${0}",
+      "\t}",
       "}"
 		],
 		"description": "Class Elements"
@@ -1154,7 +1154,7 @@
     "prefix": ["cs", "constructor"],
 		"body": [
       "constructor(${1:args}) {",
-      "  ${0}",
+      "\t${0}",
       "}"
 		],
 		"description": "Class Constructor"
@@ -1164,10 +1164,10 @@
     "prefix": "extends",
 		"body": [
       "class ${1:name} extends ${2:base} {",
-      "  constructor(${3:args}) {",
-      "    super(${3:args})",
-      "    ${0}",
-      "  }",
+      "\tconstructor(${3:args}) {",
+      "\t\tsuper(${3:args})",
+      "\t\t${0}",
+      "\t}",
       "}"
 		],
 		"description": "Class Extends"
@@ -1185,7 +1185,7 @@
     "prefix": "staticMethod",
 		"body": [
       "static ${1:name}() {",
-      "  ${0}",
+      "\t${0}",
       "}"
 		],
 		"description": "Class Static Method"
@@ -1195,7 +1195,7 @@
     "prefix": ["pt", "prototype"],
 		"body": [
       "${1:name}.prototype.${2:method} = function (${3:args}) {",
-      "  ${0}",
+      "\t${0}",
       "}"
 		],
 		"description": "Prototype Method"
@@ -1205,7 +1205,7 @@
     "prefix": "get",
 		"body": [
 			"get ${1:property}() {",
-      "  ${0}",
+      "\t${0}",
       "}"
 		],
 		"description": "Getter"
@@ -1215,7 +1215,7 @@
     "prefix": "set",
 		"body": [
 			"set ${1:property}(${2:value}) {",
-      "  ${0}",
+      "\t${0}",
       "}"
 		],
 		"description": "Setter"
@@ -1241,7 +1241,7 @@
     "prefix": "retp",
 		"body": [
       "return new Promise((resolve, reject) => {",
-      "  ${0:resolve()}",
+      "\t${0:resolve()}",
       "})"
 		],
 		"description": "Return Promise"
@@ -1251,7 +1251,7 @@
     "prefix": ["pro", "promise"],
 		"body": [
       "new Promise((resolve, reject) => {",
-      "  ${0:resolve()}",
+      "\t${0:resolve()}",
       "})"
 		],
 		"description": "Promise"
@@ -1261,7 +1261,7 @@
     "prefix": ["prot", "then"],
 		"body": [
       "${1:promise.}then((${2:res}) => {",
-      "  ${0}",
+      "\t${0}",
       "})"
 		],
 		"description": "Promise.prototype.then()"
@@ -1271,7 +1271,7 @@
     "prefix": ["proc", "catch"],
 		"body": [
       "${1:promise.}catch((${2:e}) => {",
-      "  ${0}",
+      "\t${0}",
       "})"
 		],
 		"description": "Promise.prototype.catch()"
@@ -1281,7 +1281,7 @@
     "prefix": ["prof", "finally"],
 		"body": [
       "${1:promise.}finally(() => {",
-      "  ${0}",
+      "\t${0}",
       "})"
 		],
 		"description": "Promise.prototype.finally()"
@@ -1363,18 +1363,18 @@
     "prefix": "expf",
 		"body": [
       "export const ${1:name} = (${2:args}) => {",
-      "  ${0}",
+      "\t${0}",
       "}"
 		],
 		"description": "Export Function"
   },
 
-  "ES Import": {
+  "ES Import External Module": {
     "prefix": "imp",
 		"body": [
       "import ${1:*} from '${0:module}'"
 		],
-		"description": "Import"
+		"description": "ES Import External Module"
   },
 
   "ES Import Destructuring": {
@@ -1397,7 +1397,7 @@
     "prefix": "meo",
 		"body": [
       "module.exports = {",
-      "  ${0:member}",
+      "\t${0:member}",
       "}"
 		],
 		"description": "CommonJS Module Exports Object"
@@ -1423,7 +1423,7 @@
     "prefix": "sett",
 		"body": [
       "setTimeout(() => {",
-      "  ${0}",
+      "\t${0}",
       "}, ${1:delay})"
 		],
 		"description": "SetTimeout"
@@ -1433,7 +1433,7 @@
     "prefix": "seti",
 		"body": [
       "setInterval(() => {",
-      "  ${0}",
+      "\t${0}",
       "}, ${1:delay})"
 		],
 		"description": "SetInterval"
@@ -1443,7 +1443,7 @@
     "prefix": "setim",
 		"body": [
       "setImmediate(() => {",
-      "  ${0}",
+      "\t${0}",
       "})"
 		],
 		"description": "setImmediate"
@@ -1453,7 +1453,7 @@
     "prefix": "nt",
 		"body": [
       "process.nextTick(() => {",
-      "  ${0}",
+      "\t${0}",
       "})"
 		],
 		"description": "Process NextTick"
