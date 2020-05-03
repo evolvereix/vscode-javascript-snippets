@@ -225,7 +225,7 @@
   "If Statement": {
     "prefix": "if",
 		"body": [
-			"if (${1:condition}) ${0}"
+			"if (${0:condition}) ${1}"
 		],
 		"description": "If Statement"
   },
