@@ -1248,7 +1248,7 @@
   },
 
   "Promise": {
-    "prefix": ["pro", "promise"],
+    "prefix": "pro",
 		"body": [
       "new Promise((resolve, reject) => {",
       "\t${0:resolve()}",
@@ -1258,63 +1258,65 @@
   },
 
   "Promise.prototype.then()": {
-    "prefix": ["prot", "then"],
+    "prefix": "prot",
 		"body": [
-      "${1:promise.}then((${2:res}) => {",
-      "\t${0}",
-      "})"
+      "${1:Promise.}then(${1})${0}"
 		],
 		"description": "Promise.prototype.then()"
   },
 
   "Promise.prototype.catch()": {
-    "prefix": ["proc", "catch"],
+    "prefix": "proc",
 		"body": [
-      "${1:promise.}catch((${2:e}) => {",
-      "\t${0}",
-      "})"
+      "${1:Promise.}catch(${1})${0}"
 		],
 		"description": "Promise.prototype.catch()"
   },
 
   "Promise.prototype.finally()": {
-    "prefix": ["prof", "finally"],
+    "prefix": "prof",
 		"body": [
-      "${1:promise.}finally(() => {",
-      "\t${0}",
-      "})"
+      "${1:Promise.}finally(${1})${0}"
 		],
 		"description": "Promise.prototype.finally()"
   },
 
   "Promise.all()": {
-    "prefix": "all",
+    "prefix": "proall",
 		"body": [
-      "Promise.all(${0:iterable})"
+      "Promise.all(${1:iterable})${0}"
 		],
 		"description": "Promise.all()"
   },
 
-  "Promise.allSettled()": {
-    "prefix": "allSettled",
+  "Promise.race()": {
+    "prefix": ["prorace", "race"],
 		"body": [
-      "Promise.allSettled(${0:iterable})"
+      "Promise.race(${1:iterable})${0}"
+		],
+		"description": "Promise.race()"
+  },
+
+  "Promise.allSettled()": {
+    "prefix": ["proall", "allSettled"],
+		"body": [
+      "Promise.allSettled(${1:iterable})${0}"
 		],
 		"description": "Promise.allSettled()"
   },
 
-  "Promise.race()": {
-    "prefix": "race",
+  "Promise.any()": {
+    "prefix": "proany",
 		"body": [
-      "Promise.race(${0:iterable})"
+      "Promise.any(${1:iterable})${0}"
 		],
-		"description": "Promise.race()"
+		"description": "Promise.any()"
   },
 
   "Promise.reject()": {
     "prefix": "reject",
 		"body": [
-      "${1:promise.}reject(${0})"
+      "${1:Promise.}reject(${2})${0}"
 		],
 		"description": "Promise.reject()"
   },
@@ -1322,7 +1324,7 @@
   "Promise.resolve()": {
     "prefix": "resolve",
 		"body": [
-      "${1:promise.}resolve(${0})"
+      "${1:Promise.}resolve(${2})${0}"
 		],
 		"description": "Promise.resolve()"
   },
