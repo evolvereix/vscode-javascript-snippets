@@ -10,7 +10,8 @@ All the snippets not include the final semicolon `;`.
 
 ### Suggestions
 
-Add `"editor.snippetSuggestions": "top"` to your user settings to see these snippets on top in the suggestion popover.
+- Install `Control Snippets` VS Code extensions. Open Command Palette writer `Control Snippets` and disable **JavaScript Snippets** from extensions.
+- Add `"editor.snippetSuggestions": "inline"` to your user settings to see these snippets on top in the suggestion popover.
 
 ## Snippets
 
@@ -263,20 +264,21 @@ Below is a list of all available snippets and the triggers of each one. Remember
 <details>
 <summary>Table</summary>
 
-| Trigger | Content                                       |
-| ------- | --------------------------------------------- |
-| `retp`  | `return new Promise((resolve, reject) => {})` |
-| `pro`   | `new Promise((resolve, reject) => {})`        |
-| `prot`  | `promise.then(() => {})`                      |
-| `proc`  | `promise.catch(() => {})`                     |
-| `prof`  | `promise.finally(() => {})`                   |
-| `all`   | `Promise.all()`                               |
-| `alls`  | `Promise.allSettled()`                        |
-| `race`  | `Promise.race()`                              |
-| `rej`   | `promise.reject()`                            |
-| `res`   | `promise.resolve()`                           |
-| `asy`   | `async`                                       |
-| `aw`    | `await`                                       |
+| Trigger  | Content                                       |
+| -------- | --------------------------------------------- |
+| `retp`   | `return new Promise((resolve, reject) => {})` |
+| `pro`    | `new Promise((resolve, reject) => {})`        |
+| `prot`   | `promise.then(() => {})`                      |
+| `proc`   | `promise.catch(() => {})`                     |
+| `prof`   | `promise.finally(() => {})`                   |
+| `proall` | `Promise.all()`                               |
+| `race`   | `Promise.race()`                              |
+| `alls`   | `Promise.allSettled()`                        |
+| `proany` | `Promise.any()`                               |
+| `rej`    | `promise.reject()`                            |
+| `res`    | `promise.resolve()`                           |
+| `asy`    | `async`                                       |
+| `aw`     | `await`                                       |
 
 </details>
 
