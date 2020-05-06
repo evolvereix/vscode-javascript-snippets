@@ -1260,7 +1260,7 @@
   "Promise.prototype.then()": {
     "prefix": "prot",
 		"body": [
-      "${1:Promise.}then(${1})${0}"
+      "${1:Promise.}then(${2})${0}"
 		],
 		"description": "Promise.prototype.then()"
   },
@@ -1268,7 +1268,7 @@
   "Promise.prototype.catch()": {
     "prefix": "proc",
 		"body": [
-      "${1:Promise.}catch(${1})${0}"
+      "${1:Promise.}catch(${2})${0}"
 		],
 		"description": "Promise.prototype.catch()"
   },
@@ -1276,7 +1276,7 @@
   "Promise.prototype.finally()": {
     "prefix": "prof",
 		"body": [
-      "${1:Promise.}finally(${1})${0}"
+      "${1:Promise.}finally(${2})${0}"
 		],
 		"description": "Promise.prototype.finally()"
   },
