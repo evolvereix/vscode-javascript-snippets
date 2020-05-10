@@ -43,11 +43,12 @@ Below is a list of all available snippets and the triggers of each one. Remember
 | `yie`   | `yield`                   |
 | `next`  | `next()`                  |
 | `as`    | `as`                      |
+| `size`  | `size`                    |
 | `kv`    | `key: value`              |
 
 </details>
 
-### Loops
+### Loops and Iterators
 
 <details>
 <summary>Table</summary>
@@ -60,6 +61,10 @@ Below is a list of all available snippets and the triggers of each one. Remember
 | `while` | `while () {}`                   |
 | `fori`  | `for (const item in object) {}` |
 | `foro`  | `for (const i of object) {}`    |
+| `fore`  | `forEach(() => {})`             |
+| `keys`  | `keys()`                        |
+| `val`   | `values()`                      |
+| `ent`   | `entries()`                     |
 
 </details>
 
@@ -129,7 +134,6 @@ Below is a list of all available snippets and the triggers of each one. Remember
 | `isa`   | `Array.isArray()`       |
 | `of`    | `Array.of()`            |
 | `cw`    | `copyWithin()`          |
-| `ent`   | `entries()`             |
 | `eve`   | `every()`               |
 | `fi`    | `fill()`                |
 | `filt`  | `filter(() => {})`      |
@@ -137,9 +141,7 @@ Below is a list of all available snippets and the triggers of each one. Remember
 | `findi` | `findIndex()`           |
 | `flat`  | `flat()`                |
 | `flatm` | `flatMap(() => {})`     |
-| `fore`  | `forEach(() => {})`     |
 | `jo`    | `join()`                |
-| `keys`  | `keys()`                |
 | `map`   | `map(() => {})`         |
 | `po`    | `pop()`                 |
 | `pu`    | `push()`                |
@@ -152,7 +154,6 @@ Below is a list of all available snippets and the triggers of each one. Remember
 | `sp`    | `splice()`              |
 | `tls`   | `toLocaleString()`      |
 | `un`    | `unshift()`             |
-| `val`   | `values()`              |
 
 </details>
 
@@ -229,6 +230,22 @@ Below is a list of all available snippets and the triggers of each one. Remember
 
 </details>
 
+### Collections
+
+<details>
+<summary>Table</summary>
+
+| Trigger  | Content    |
+| -------- | ---------- |
+| `clear`  | `clear()`  |
+| `delete` | `delete()` |
+| `has`    | `has()`    |
+| `add`    | `add()`    |
+| `get`    | `get()`    |
+| `set`    | `set()`    |
+
+</details>
+
 ### Classes
 
 <details>
@@ -242,8 +259,8 @@ Below is a list of all available snippets and the triggers of each one. Remember
 | `ss`    | `static name = value`                                   |
 | `sm`    | `static name() {}`                                      |
 | `pt`    | `Class.prototype.method = function() {}`                |
-| `get`   | `get property() {}`                                     |
-| `set`   | `set property(value) {}`                                |
+| `gett`  | `get property() {}`                                     |
+| `sett`  | `set property(value) {}`                                |
 
 </details>
 
