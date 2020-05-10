@@ -151,6 +151,14 @@
 		"description": "As Keyword"
   },
 
+  "Size Keyword": {
+		"prefix": "size",
+		"body": [
+      "size"
+		],
+		"description": "Size Keyword"
+  },
+
   "Key-Value Pair": {
     "prefix": ["kv", "keyValue"],
 		"body": [
@@ -221,6 +229,39 @@
 		"description": "For-Of Statement"
   },
 
+  "forEach Statement": {
+    "prefix": "fore",
+		"body": [
+			"${1}forEach((${2:item}, ${3:key}) => {",
+      "\t${0}",
+      "})"
+		],
+		"description": "forEach Statement"
+  },
+
+  "keys Statement": {
+    "prefix": "keys",
+    "body": [
+      "${1}keys()${0}"
+    ],
+    "description": "keys Statement"
+  },
+
+  "values Statement": {
+    "prefix": "values",
+    "body": [
+      "${1}values()${0}"
+    ],
+    "description": "values Statement"
+  },
+
+  "entries Statement": {
+    "prefix": "entries",
+    "body": [
+      "${1}entries()${0}"
+    ],
+    "description": "entries Statement"
+  },
 
   "If Statement": {
     "prefix": "if",
@@ -492,14 +533,6 @@
     "description": "Array.prototype.copyWithin()"
   },
 
-  "Array.prototype.entries()": {
-    "prefix": "entries",
-    "body": [
-      "${1}entries()${0}"
-    ],
-    "description": "Array.prototype.entries()"
-  },
-
   "Array.prototype.every()": {
     "prefix": "every",
     "body": [
@@ -562,30 +595,12 @@
     "description": "Array.prototype.flatMap()"
   },
 
-  "Array.prototype.forEach()": {
-    "prefix": "fore",
-		"body": [
-			"${1}forEach((${2:item}, ${3:key}) => {",
-      "\t${0}",
-      "})"
-		],
-		"description": "Array.prototype.forEach()"
-  },
-
   "Array.prototype.join()": {
     "prefix": "join",
     "body": [
       "join(${1})${0}"
     ],
     "description": "Array.prototype.join()"
-  },
-
-  "Array.prototype.keys()": {
-    "prefix": "keys",
-    "body": [
-      "${1}keys()${0}"
-    ],
-    "description": "Array.prototype.keys()"
   },
 
   "Array.prototype.map()": {
@@ -690,14 +705,6 @@
       "unshift(${1})${0}"
     ],
     "description": "Array.prototype.unshift()"
-  },
-
-  "Array.prototype.values()": {
-    "prefix": "values",
-    "body": [
-      "${1}values()${0}"
-    ],
-    "description": "Array.prototype.values()"
   },
 
   "String.fromCharCode()": {
@@ -1138,6 +1145,54 @@
     "description": "Object.prototype.valueOf()"
   },
 
+  "Clear() Method": {
+    "prefix": "clear",
+    "body": [
+      "${1}clear()${0}"
+    ],
+    "description": "Clear() Method"
+  },
+
+  "Delete() Method": {
+    "prefix": "delete",
+    "body": [
+      "${1}delete(${2})${0}"
+    ],
+    "description": "Delete() Method"
+  },
+
+  "Has() Method": {
+    "prefix": "has",
+    "body": [
+      "${1}has(${2})${0}"
+    ],
+    "description": "Has() Method"
+  },
+
+  "Add() Method": {
+    "prefix": "add",
+    "body": [
+      "${1}add(${2})${0}"
+    ],
+    "description": "Add() Method"
+  },
+
+  "Get() Method": {
+    "prefix": "get",
+    "body": [
+      "${1}get(${2})${0}"
+    ],
+    "description": "Get() Method"
+  },
+
+  "Set() Method": {
+    "prefix": "set",
+    "body": [
+      "${1}set(${2})${0}"
+    ],
+    "description": "Set() Method"
+  },
+
   "Class Elements": {
     "prefix": "class",
 		"body": [
@@ -1202,7 +1257,7 @@
   },
 
   "Getter": {
-    "prefix": "get",
+    "prefix": "gett",
 		"body": [
 			"get ${1:property}() {",
       "\t${0}",
@@ -1212,7 +1267,7 @@
   },
 
   "Setter": {
-    "prefix": "set",
+    "prefix": "sett",
 		"body": [
 			"set ${1:property}(${2:value}) {",
       "\t${0}",
