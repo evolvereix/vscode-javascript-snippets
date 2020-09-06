@@ -11,8 +11,10 @@ jobs:
     name: Publish
     runs-on: ubuntu-latest
     steps:
-      - name: VSCode Release Plugin
-        uses: algorizen/vscode-javascript-snippets@master
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Release
+        uses: algorizen/vsce-action@master
         env:
           PUBLISHER_TOKEN: ${{ secrets.PUBLISHER_TOKEN }}
         with:
