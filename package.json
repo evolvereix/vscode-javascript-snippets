@@ -33,6 +33,22 @@
       {
         "language": "typescript",
         "path": "./snippets/snippets.json"
+      },
+      {
+        "language": "javascriptreact",
+        "path": "./snippets/snippets.json"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "./snippets/snippets.json"
+      },
+      {
+        "language": "html",
+        "path": "./snippets/snippets.json"
+      },
+      {
+        "language": "vue",
+        "path": "./snippets/snippets.json"
       }
     ]
   }

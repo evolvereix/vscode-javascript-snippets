@@ -8,10 +8,14 @@ This extension contains code snippets for JavaScript in ES6 syntax for VS Code e
 
 All the snippets not include the final semicolon `;`.
 
-### Suggestions
+### Supported languages (file extensions)
 
-- Install `Control Snippets` VS Code extensions. Open Command Palette writer `Control Snippets` and disable **JavaScript Snippets** from extensions.
-- Add `"editor.snippetSuggestions": "inline"` to your user settings to see these snippets on top in the suggestion popover.
+- JavaScript (.js)
+- TypeScript (.ts)
+- JavaScript React (.jsx)
+- TypeScript React (.tsx)
+- Html (.html)
+- Vue (.vue)
 
 ## Snippets
 
@@ -22,29 +26,13 @@ Below is a list of all available snippets and the triggers of each one. Remember
 <details>
 <summary>Table</summary>
 
-| Trigger | Content                   |
-| ------- | ------------------------- |
-| `v`     | `var statement`           |
-| `v=`    | `var statement = value`   |
-| `l`     | `let statement`           |
-| `l=`    | `let statement = value`   |
-| `ld`    | `let {} = value`          |
-| `c`     | `const statement`         |
-| `c=`    | `const statement = value` |
-| `cd`    | `const {} = value`        |
-| `len`   | `length`                  |
-| `br`    | `break`                   |
-| `ct`    | `continue`                |
-| `def`   | `default`                 |
-| `deb`   | `debugger`                |
-| `emp`   | `empty`                   |
-| `ret`   | `return`                  |
-| `thr`   | `throw`                   |
-| `yie`   | `yield`                   |
-| `next`  | `next()`                  |
-| `as`    | `as`                      |
-| `size`  | `size`                    |
-| `kv`    | `key: value`              |
+| Trigger | Content      |
+| ------- | ------------ |
+| `emp`   | `empty`      |
+| `ret`   | `return`     |
+| `thr`   | `throw`      |
+| `yie`   | `yield`      |
+| `kv`    | `key: value` |
 
 </details>
 
@@ -55,16 +43,10 @@ Below is a list of all available snippets and the triggers of each one. Remember
 
 | Trigger | Content                         |
 | ------- | ------------------------------- |
-| `for`   | `for (; i++) {}`                |
-| `forr`  | `for (: i--) {}`                |
 | `do`    | `do {} while ()`                |
-| `while` | `while () {}`                   |
 | `fori`  | `for (const item in object) {}` |
 | `foro`  | `for (const i of object) {}`    |
 | `fore`  | `forEach(() => {})`             |
-| `keys`  | `keys()`                        |
-| `val`   | `values()`                      |
-| `ent`   | `entries()`                     |
 
 </details>
 
@@ -73,19 +55,17 @@ Below is a list of all available snippets and the triggers of each one. Remember
 <details>
 <summary>Table</summary>
 
-| Trigger  | Content                         |
-| -------- | ------------------------------- |
-| `if`     | `if () statement`               |
-| `el`     | `else {}`                       |
-| `ife`    | `if () {} else {}`              |
-| `eli`    | `else if () {}`                 |
-| `ter`    | `? :`                           |
-| `switch` | `switch () { case break }`      |
-| `case`   | `case break`                    |
-| `try`    | `try {} catch () {}`            |
-| `tryc`   | `catch () {}`                   |
-| `tryf`   | `finally {}`                    |
-| `trycf`  | `try {} catch () {} finally {}` |
+| Trigger | Content                         |
+| ------- | ------------------------------- |
+| `if`    | `if () statement`               |
+| `els`   | `else {}`                       |
+| `ife`   | `if () {} else {}`              |
+| `eli`   | `else if () {}`                 |
+| `ter`   | `? :`                           |
+| `try`   | `try {} catch () {}`            |
+| `tryc`  | `catch () {}`                   |
+| `tryf`  | `finally {}`                    |
+| `trycf` | `try {} catch () {} finally {}` |
 
 </details>
 
@@ -101,9 +81,6 @@ Below is a list of all available snippets and the triggers of each one. Remember
 | `iife`  | `(() => {})()`            |
 | `afn`   | `const name = () => {}`   |
 | `funcg` | `function* name(args) {}` |
-| `call`  | `call(this, args)`        |
-| `apply` | `apply(this, args)`       |
-| `bind`  | `bind(this, args)`        |
 
 </details>
 
@@ -112,14 +89,14 @@ Below is a list of all available snippets and the triggers of each one. Remember
 <details>
 <summary>Table</summary>
 
-| Trigger | Content         |
-| ------- | --------------- |
-| `cc`    | `concat()`      |
-| `inc`   | `includes()`    |
-| `io`    | `indexOf()`     |
-| `la`    | `lastIndexOf()` |
-| `sl`    | `slice()`       |
-| `tos`   | `toString()`    |
+| Trigger  | Content         |
+| -------- | --------------- |
+| `concat` | `concat()`      |
+| `inc`    | `includes()`    |
+| `io`     | `indexOf()`     |
+| `la`     | `lastIndexOf()` |
+| `sl`     | `slice()`       |
+| `tos`    | `toString()`    |
 
 </details>
 
@@ -136,8 +113,8 @@ Below is a list of all available snippets and the triggers of each one. Remember
 | `cw`    | `copyWithin()`          |
 | `eve`   | `every()`               |
 | `fi`    | `fill()`                |
-| `filt`  | `filter(() => {})`      |
-| `find`  | `find(() => {})`        |
+| `filt`  | `filter()`              |
+| `find`  | `find()`                |
 | `findi` | `findIndex()`           |
 | `flat`  | `flat()`                |
 | `flatm` | `flatMap(() => {})`     |
@@ -162,35 +139,36 @@ Below is a list of all available snippets and the triggers of each one. Remember
 <details>
 <summary>Table</summary>
 
-| Trigger   | Content                  |
-| --------- | ------------------------ |
-| `fromch`  | `String.fromCharCode()`  |
-| `fromco`  | `String.fromCodePoint()` |
-| `raw`     | `String.raw()`           |
-| `chara`   | `charAt()`               |
-| `charc`   | `charCodeAt()`           |
-| `codep`   | `codePointAt()`          |
-| `endsw`   | `endsWith()`             |
-| `localec` | `localeCompare()`        |
-| `match`   | `match()`                |
-| `matcha`  | `matchAll()`             |
-| `norm`    | `normalize()`            |
-| `pade`    | `padEnd()`               |
-| `pads`    | `padStart()`             |
-| `repe`    | `repeat()`               |
-| `repl`    | `replace()`              |
-| `sear`    | `search()`               |
-| `split`   | `split()`                |
-| `startsw` | `startsWith()`           |
-| `subs`    | `substring()`            |
-| `tll`     | `toLocaleLowerCase()`    |
-| `tlu`     | `toLocaleUpperCase()`    |
-| `tlc`     | `toLowerCase()`          |
-| `tou`     | `toUpperCase()`          |
-| `trim`    | `trim()`                 |
-| `trime`   | `trimEnd()`              |
-| `trims`   | `trimStart()`            |
-| `valueof` | `valueOf()`              |
+| Trigger      | Content                  |
+| ------------ | ------------------------ |
+| `fromch`     | `String.fromCharCode()`  |
+| `fromco`     | `String.fromCodePoint()` |
+| `raw`        | `String.raw()`           |
+| `chara`      | `charAt()`               |
+| `charc`      | `charCodeAt()`           |
+| `codep`      | `codePointAt()`          |
+| `endsw`      | `endsWith()`             |
+| `localec`    | `localeCompare()`        |
+| `match`      | `match()`                |
+| `matcha`     | `matchAll()`             |
+| `norm`       | `normalize()`            |
+| `pade`       | `padEnd()`               |
+| `pads`       | `padStart()`             |
+| `repe`       | `repeat()`               |
+| `repl`       | `replace()`              |
+| `replaceall` | `replaceAll()`           |
+| `sear`       | `search()`               |
+| `split`      | `split()`                |
+| `startsw`    | `startsWith()`           |
+| `subs`       | `substring()`            |
+| `tll`        | `toLocaleLowerCase()`    |
+| `tlu`        | `toLocaleUpperCase()`    |
+| `tlc`        | `toLowerCase()`          |
+| `tou`        | `toUpperCase()`          |
+| `trim`       | `trim()`                 |
+| `trime`      | `trimEnd()`              |
+| `trims`      | `trimStart()`            |
+| `valueof`    | `valueOf()`              |
 
 </details>
 
@@ -281,21 +259,21 @@ Below is a list of all available snippets and the triggers of each one. Remember
 <details>
 <summary>Table</summary>
 
-| Trigger  | Content                                       |
-| -------- | --------------------------------------------- |
-| `retp`   | `return new Promise((resolve, reject) => {})` |
-| `pro`    | `new Promise((resolve, reject) => {})`        |
-| `prot`   | `promise.then(() => {})`                      |
-| `proc`   | `promise.catch(() => {})`                     |
-| `prof`   | `promise.finally(() => {})`                   |
-| `proall` | `Promise.all()`                               |
-| `race`   | `Promise.race()`                              |
-| `alls`   | `Promise.allSettled()`                        |
-| `proany` | `Promise.any()`                               |
-| `rej`    | `promise.reject()`                            |
-| `res`    | `promise.resolve()`                           |
-| `asy`    | `async`                                       |
-| `aw`     | `await`                                       |
+| Trigger    | Content                                       |
+| ---------- | --------------------------------------------- |
+| `retp`     | `return new Promise((resolve, reject) => {})` |
+| `pro`      | `new Promise((resolve, reject) => {})`        |
+| `prot`     | `promise.then(() => {})`                      |
+| `proc`     | `promise.catch(() => {})`                     |
+| `prof`     | `promise.finally(() => {})`                   |
+| `proall`   | `Promise.all()`                               |
+| `prorace`  | `Promise.race()`                              |
+| `proallls` | `Promise.allSettled()`                        |
+| `proany`   | `Promise.any()`                               |
+| `rej`      | `promise.reject()`                            |
+| `res`      | `promise.resolve()`                           |
+| `asy`      | `async`                                       |
+| `aw`       | `await`                                       |
 
 </details>
 
