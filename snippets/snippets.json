@@ -1,80 +1,14 @@
 {
-  "Empty Statement": {
-    "prefix": "empty",
-    "body": ["empty${0}"],
-    "description": "Empty Statement"
-  },
-
-  "Return Statement": {
-    "prefix": ["ret", "return"],
-    "body": ["return${0}"],
-    "description": "Return Statement"
-  },
-
-  "Throw Statement": {
-    "prefix": ["thr", "throw"],
-    "body": ["throw${0}"],
-    "description": "Throw Statement"
-  },
-
-  "Yield Statement": {
-    "prefix": "yield",
-    "body": ["yield${0}"],
-    "description": "Yield Statement"
-  },
-
   "Key-Value Pair": {
     "prefix": ["kv", "keyValue"],
     "body": ["${1:key}: ${2:value}${0}"],
     "description": "Key-Value Pair"
   },
 
-  "Do-While Statement": {
-    "prefix": ["do", "doWhile"],
-    "body": ["do {", "\t${0}", "} while (${1:condition})"],
-    "description": "Do-While Statement"
-  },
-
-  "For-In Statement": {
-    "prefix": "fori",
-    "body": [
-      "for (const ${1:item} in ${2:object}) {",
-      "\tif (${2:object}.hasOwnProperty(${1:item})) {",
-      "\t\t${0}",
-      "\t}",
-      "}"
-    ],
-    "description": "For-In Statement. Not be used to iterate over an Array"
-  },
-
-  "For-Of Statement": {
-    "prefix": "foro",
-    "body": ["for (const ${1:iterator} of ${2:object}) {", "\t${0}", "}"],
-    "description": "For-Of Statement"
-  },
-
-  "forEach Statement": {
-    "prefix": "fore",
-    "body": ["forEach((${1}) => {", "\t${0}", "})"],
-    "description": "forEach Statement"
-  },
-
-  "If Statement": {
-    "prefix": "if",
-    "body": ["if (${1:condition}) ${0}"],
-    "description": "If Statement"
-  },
-
   "Else Statement": {
     "prefix": "els",
     "body": ["else {", "\t${0}", "}"],
     "description": "Else Statement"
-  },
-
-  "If-Else Statement": {
-    "prefix": "ife",
-    "body": ["if (${1:condition}) {", "\t${0}", "} else {", "\t${2}", "}"],
-    "description": "If-Else Statement"
   },
 
   "Else-If Statement": {
@@ -87,12 +21,6 @@
     "prefix": "ter",
     "body": ["${1:condition} ? ${2:expression} : ${0:expression}"],
     "description": "Ternary Operator"
-  },
-
-  "Try-Catch Statement": {
-    "prefix": "try",
-    "body": ["try {", "\t", "} catch (${1:e}) {", "\t${0}", "}"],
-    "description": "Try-Catch Statement"
   },
 
   "Catch Statement": {
@@ -111,12 +39,6 @@
     "prefix": "trycf",
     "body": ["try {", "\t", "} catch (${1:e}) {", "\t", "} finally {", "\t${0}", "}"],
     "description": "Try-Catch-Finally Statement"
-  },
-
-  "Named Function": {
-    "prefix": "func",
-    "body": ["function ${1:name}(${2:args}) {", "\t${0}", "}"],
-    "description": "Named Function"
   },
 
   "Arrow Function": {
@@ -188,12 +110,6 @@
   "Array.isArray()": {
     "prefix": "isArray",
     "body": ["Array.isArray(${0:value})"],
-    "description": "Array.isArray()"
-  },
-
-  "Array.of()": {
-    "prefix": "of",
-    "body": ["Array.of(${0:value})"],
     "description": "Array.isArray()"
   },
 
@@ -892,18 +808,6 @@
     "description": "Ctx Arrow Function"
   },
 
-  "SetTimeout": {
-    "prefix": "sett",
-    "body": ["setTimeout(() => {", "\t${0}", "}, ${1:delay})"],
-    "description": "SetTimeout"
-  },
-
-  "SetInterval": {
-    "prefix": "seti",
-    "body": ["setInterval(() => {", "\t${0}", "}, ${1:delay})"],
-    "description": "SetInterval"
-  },
-
   "setImmediate": {
     "prefix": "setim",
     "body": ["setImmediate(() => {", "\t${0}", "})"],
@@ -920,24 +824,6 @@
     "prefix": "us",
     "body": ["'use strict'"],
     "description": "Insert 'use strict' Statement"
-  },
-
-  "Print to log": {
-    "prefix": "log",
-    "body": ["console.log(${0})"],
-    "description": "Log output to console"
-  },
-
-  "Print to error": {
-    "prefix": "err",
-    "body": ["console.error('${0} Error: ', ${1:e})"],
-    "description": "Error output to console"
-  },
-
-  "Print to warn": {
-    "prefix": "warn",
-    "body": ["console.warn(${0})"],
-    "description": "Warn output to console"
   },
 
   "Print to dir": {

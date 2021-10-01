@@ -21,32 +21,16 @@ All the snippets not include the final semicolon `;`.
 
 Below is a list of all available snippets and the triggers of each one. Remember to use tab key.
 
-### Declarations
+### Miscellaneous
 
 <details>
 <summary>Table</summary>
 
-| Trigger | Content      |
-| ------- | ------------ |
-| `emp`   | `empty`      |
-| `ret`   | `return`     |
-| `thr`   | `throw`      |
-| `yie`   | `yield`      |
-| `kv`    | `key: value` |
-
-</details>
-
-### Loops and Iterators
-
-<details>
-<summary>Table</summary>
-
-| Trigger | Content                         |
-| ------- | ------------------------------- |
-| `do`    | `do {} while ()`                |
-| `fori`  | `for (const item in object) {}` |
-| `foro`  | `for (const i of object) {}`    |
-| `fore`  | `forEach(() => {})`             |
+| Trigger | Content         |
+| ------- | --------------- |
+| `us`    | `'use strict'`  |
+| `kv`    | `key: value`    |
+| `dir`   | `console.dir()` |
 
 </details>
 
@@ -57,12 +41,9 @@ Below is a list of all available snippets and the triggers of each one. Remember
 
 | Trigger | Content                         |
 | ------- | ------------------------------- |
-| `if`    | `if () statement`               |
 | `els`   | `else {}`                       |
-| `ife`   | `if () {} else {}`              |
 | `eli`   | `else if () {}`                 |
 | `ter`   | `? :`                           |
-| `try`   | `try {} catch () {}`            |
 | `tryc`  | `catch () {}`                   |
 | `tryf`  | `finally {}`                    |
 | `trycf` | `try {} catch () {} finally {}` |
@@ -76,7 +57,6 @@ Below is a list of all available snippets and the triggers of each one. Remember
 
 | Trigger | Content                   |
 | ------- | ------------------------- |
-| `func`  | `function name(args) {}`  |
 | `af`    | `() => {}`                |
 | `iife`  | `(() => {})()`            |
 | `afn`   | `const name = () => {}`   |
@@ -109,7 +89,6 @@ Below is a list of all available snippets and the triggers of each one. Remember
 | ------- | ----------------------- |
 | `from`  | `Array.from()`          |
 | `isa`   | `Array.isArray()`       |
-| `of`    | `Array.of()`            |
 | `cw`    | `copyWithin()`          |
 | `eve`   | `every()`               |
 | `fi`    | `fill()`                |
@@ -313,34 +292,7 @@ Below is a list of all available snippets and the triggers of each one. Remember
 
 | Trigger | Content                        |
 | ------- | ------------------------------ |
-| `sett`  | `setTimeout(() => {}, delay)`  |
-| `seti`  | `setInterval(() => {}, delay)` |
 | `setim` | `setImmediate(() => {})`       |
 | `nt`    | `process.nextTick(() => {})`   |
-
-</details>
-
-### Miscellaneous
-
-<details>
-<summary>Table</summary>
-
-| Trigger | Content        |
-| ------- | -------------- |
-| `us`    | `'use strict'` |
-
-</details>
-
-### Console
-
-<details>
-<summary>Table</summary>
-
-| Trigger | Content                       |
-| ------- | ----------------------------- |
-| `log`   | `console.log()`               |
-| `err`   | `console.error('Error: ', e)` |
-| `warn`  | `console.warn()`              |
-| `dir`   | `console.dir()`               |
 
 </details>
