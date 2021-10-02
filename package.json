@@ -3,13 +3,11 @@
   "displayName": "JavaScript Snippets",
   "description": "JavaScript(ES6+) syntax code snippets for VS Code",
   "version": "0.1.6",
-  "author": {
-    "name": "algorizen"
-  },
   "publisher": "algorizen",
+  "icon": "images/icon.png",
   "repository": {
     "type": "git",
-    "url": "https://github.com/algorizen/vscode-javascript-snippets"
+    "url": "git+https://github.com/algorizen/vscode-javascript-snippets.git"
   },
   "keywords": [
     "js",
@@ -17,7 +15,12 @@
     "code",
     "snippets"
   ],
-  "icon": "images/icon.png",
+  "author": "algorizen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/algorizen/vscode-javascript-snippets/issues"
+  },
+  "homepage": "https://github.com/algorizen/vscode-javascript-snippets#readme",
   "engines": {
     "vscode": "^1.29.0"
   },
