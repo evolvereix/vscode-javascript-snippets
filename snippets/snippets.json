@@ -768,8 +768,14 @@
 
   "ES Export Function": {
     "prefix": "expf",
-    "body": ["export const ${1:name} = (${2:args}) => {", "\t${0}", "}"],
+    "body": ["export function ${1:name}(${2:args}) {", "\t${0}", "}"],
     "description": "Export Function"
+  },
+
+  "ES Export Arrow Function": {
+    "prefix": "expaf",
+    "body": ["export const ${1:name} = (${2:args}) => {", "\t${0}", "}"],
+    "description": "Export Arrow Function"
   },
 
   "ES Import External Module": {
