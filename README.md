@@ -261,13 +261,14 @@ Below is a list of all available snippets and the triggers of each one. Remember
 <details>
 <summary>Table</summary>
 
-| Trigger | Content                        |
-| ------- | ------------------------------ |
-| `exp`   | `export member`                |
-| `expd`  | `export default member`        |
-| `expf`  | `export const name = () => {}` |
-| `imp`   | `import \* from 'module'`      |
-| `impd`  | `import { \* } from 'module'`  |
+| Trigger | Content                         |
+| ------- | ------------------------------- |
+| `exp`   | `export member`                 |
+| `expd`  | `export default member`         |
+| `expf`  | `export function name(args) {}` |
+| `expaf` | `export const name = () => {}`  |
+| `imp`   | `import \* from 'module'`       |
+| `impd`  | `import { \* } from 'module'`   |
 
 </details>
 
@@ -278,8 +279,8 @@ Below is a list of all available snippets and the triggers of each one. Remember
 
 | Trigger | Content                 |
 | ------- | ----------------------- |
-| `me`    | `module.exports = name` |
-| `meo`   | `module.exports = {}`   |
+| `moe`    | `module.exports = name` |
+| `moeo`   | `module.exports = {}`   |
 | `req`   | `require('module')`     |
 | `ctx`   | `(ctx, next) => {}`     |
 
@@ -290,9 +291,9 @@ Below is a list of all available snippets and the triggers of each one. Remember
 <details>
 <summary>Table</summary>
 
-| Trigger | Content                        |
-| ------- | ------------------------------ |
-| `setim` | `setImmediate(() => {})`       |
-| `nt`    | `process.nextTick(() => {})`   |
+| Trigger | Content                      |
+| ------- | ---------------------------- |
+| `setim` | `setImmediate(() => {})`     |
+| `nt`    | `process.nextTick(() => {})` |
 
 </details>
