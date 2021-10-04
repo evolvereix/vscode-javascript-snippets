@@ -1,3 +1,12 @@
+## [0.1.7](https://github.com/algorizen/vscode-javascript-snippets/compare/v0.1.6...v0.1.7) (2021-10-04)
+
+
+### Features
+
+* add export function expression ([c20a97f](https://github.com/algorizen/vscode-javascript-snippets/commit/c20a97f8df0b6f12c361ebf42fe4952c386a526a))
+
+
+
 ## [0.1.6](https://github.com/algorizen/vscode-javascript-snippets/compare/v0.1.5...v0.1.6) (2021-10-01)
 
 

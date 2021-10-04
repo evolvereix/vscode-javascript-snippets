@@ -791,13 +791,13 @@
   },
 
   "CommonJS Module Exports": {
-    "prefix": "me",
+    "prefix": "moe",
     "body": ["module.exports = ${0:name}"],
     "description": "CommonJS Module Exports"
   },
 
   "CommonJS Module Exports Object": {
-    "prefix": "meo",
+    "prefix": "moeo",
     "body": ["module.exports = {", "\t${0:member}", "}"],
     "description": "CommonJS Module Exports Object"
   },
