@@ -7,7 +7,7 @@ const semver = require('semver')
 const { prompt } = require('enquirer')
 const currentVersion = require('../package.json').version
 
-const isDryRun = true || args.dry
+const isDryRun = args.dry
 
 const preId =
   semver.prerelease(currentVersion) && semver.prerelease(currentVersion)[0]
@@ -80,6 +80,10 @@ async function main() {
   } else {
     console.log('No changes to commit.')
   }
+
+  // publish
+  step('\nPublish to Marketplace...')
+  await runIfNotDry('vsce', ['publish'])
 
   // push to GitHub
   step('\nPushing to GitHub...')
