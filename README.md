@@ -59,8 +59,9 @@ Below is a list of all available snippets and the triggers of each one. Remember
 
 | Trigger | Content                   |
 | ------- | ------------------------- |
+| `func`  | `function name(args) {}`  |
 | `af`    | `() => {}`                |
-| `iife`  | `(() => {})()`            |
+| `iife`  | `;(() => {})()`            |
 | `afn`   | `const name = () => {}`   |
 | `funcg` | `function* name(args) {}` |
 
@@ -210,16 +211,16 @@ Below is a list of all available snippets and the triggers of each one. Remember
 <details>
 <summary>Table</summary>
 
-| Trigger | Content                                                 |
-| ------- | ------------------------------------------------------- |
-| `class` | `class name { constructor() {} }`                       |
-| `cs`    | `constructor() { }`                                     |
-| `ext`   | `class name extends base { constructor() { super() } }` |
-| `ss`    | `static name = value`                                   |
-| `sm`    | `static name() {}`                                      |
-| `pt`    | `Class.prototype.method = function() {}`                |
-| `gett`  | `get property() {}`                                     |
-| `sett`  | `set property(value) {}`                                |
+| Trigger  | Content                                                 |
+| -------- | ------------------------------------------------------- |
+| `class`  | `class name { constructor() {} }`                       |
+| `constr` | `constructor() { }`                                     |
+| `classe` | `class name extends base { constructor() { super() } }` |
+| `stat`   | `static name`                                           |
+| `sm`     | `static name() {}`                                      |
+| `pt`     | `Class.prototype.method = function() {}`                |
+| `gett`   | `get property() {}`                                     |
+| `sett`   | `set property(value) {}`                                |
 
 </details>
 
@@ -228,10 +229,10 @@ Below is a list of all available snippets and the triggers of each one. Remember
 <details>
 <summary>Table</summary>
 
-| Trigger | Content                         |
-| ------- | ------------------------------- |
-| typ     | `typeof source === 'undefined'` |
-| ins     | `instanceof Object`             |
+| Trigger | Content             |
+| ------- | ------------------- |
+| typ     | `typeof source`     |
+| ins     | `instanceof Object` |
 
 </details>
 
@@ -297,5 +298,41 @@ Below is a list of all available snippets and the triggers of each one. Remember
 | ------- | ---------------------------- |
 | `setim` | `setImmediate(() => {})`     |
 | `nt`    | `process.nextTick(() => {})` |
+
+</details>
+
+### TypeScript
+
+<details>
+<summary>Table</summary>
+
+| Trigger    | Content                              |
+| ---------- | ------------------------------------ |
+| `iterable` | `Iterable statement`                 |
+| `inter`    | `interface shapes {}`                |
+| `type`     | `type primitives {}`                 |
+| `enum`     | `enum direction {}`                  |
+| `classi`   | `class name implements interface {}` |
+| `impt`     | `import type { \* } from 'module'`   |
+| `expt`     | `export type ${0:member}`            |
+| `expi`     | `export interface shapes {}`         |
+| `t`        | `<T>`                                |
+| `te`       | `<T extends base>`                   |
+| `part`     | `Partial<Type>`                      |
+| `requ`     | `Required<Type>`                     |
+| `reado`    | `Readonly<Type>`                     |
+| `rec`      | `Record<Keys, Type>`                 |
+| `pick`     | `Pick<Type, Keys>`                   |
+| `omit`     | `Omit<Type, Keys>`                   |
+| `exclude`  | `Exclude<Type, ExcludedUnion>`       |
+| `extract`  | `Extract<Type, Union>`               |
+| `nonn`     | `NonNullable<Type>`                  |
+| `para`     | `Parameters<Type>`                   |
+| `constr`   | `ConstructorParameters<Type>`        |
+| `rett`     | `ReturnType<Type>`                   |
+| `insta`    | `InstanceType<Type>`                 |
+| `thispar`  | `ThisParameterType<Type>`            |
+| `omitt`    | `OmitThisParameter<Type>`            |
+| `thist`    | `ThisType<Type>`                     |
 
 </details>
