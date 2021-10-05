@@ -6,7 +6,9 @@ This extension contains code snippets for JavaScript in ES6 syntax for VS Code e
 
 **Note**
 
-All the snippets not include the final semicolon `;`.
+- Excluding vscode built-in snippets.
+- Excluding the final semicolon `;`.
+- Use single quotes(`''`) instead of double quotes(`""`).
 
 ### Supported languages (file extensions)
 
@@ -261,14 +263,14 @@ Below is a list of all available snippets and the triggers of each one. Remember
 <details>
 <summary>Table</summary>
 
-| Trigger | Content                         |
-| ------- | ------------------------------- |
-| `exp`   | `export member`                 |
-| `expd`  | `export default member`         |
-| `expf`  | `export function name(args) {}` |
-| `expaf` | `export const name = () => {}`  |
-| `imp`   | `import \* from 'module'`       |
-| `impd`  | `import { \* } from 'module'`   |
+| Trigger | Content                          |
+| ------- | -------------------------------- |
+| `exp`   | `export member`                  |
+| `expd`  | `export default member`          |
+| `expf`  | `export function name(args) {}`  |
+| `expaf` | `export const name = () => {}`   |
+| `imp`   | `import name from 'module'`      |
+| `impd`  | `import * as name from 'module'` |
 
 </details>
 
@@ -279,8 +281,8 @@ Below is a list of all available snippets and the triggers of each one. Remember
 
 | Trigger | Content                 |
 | ------- | ----------------------- |
-| `moe`    | `module.exports = name` |
-| `moeo`   | `module.exports = {}`   |
+| `moe`   | `module.exports = name` |
+| `moeo`  | `module.exports = {}`   |
 | `req`   | `require('module')`     |
 | `ctx`   | `(ctx, next) => {}`     |
 

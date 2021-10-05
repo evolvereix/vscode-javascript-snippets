@@ -780,14 +780,14 @@
 
   "ES Import External Module": {
     "prefix": "imp",
-    "body": ["import ${1:*} from '${0:module}'"],
+    "body": ["import ${0:*} from '${1:module}'"],
     "description": "ES Import External Module"
   },
 
   "ES Import Destructuring": {
-    "prefix": "impd",
-    "body": ["import { ${1:*} } from '${0:module}'"],
-    "description": "ES Import Destructuring"
+    "prefix": "impe",
+    "body": ["import * as ${0:name} from '${1:module}'"],
+    "description": "ES Import Entire Module"
   },
 
   "CommonJS Module Exports": {
