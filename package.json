@@ -2,7 +2,7 @@
   "name": "javascript-snippets",
   "displayName": "JavaScript Snippets",
   "description": "JavaScript(ES6+) syntax code snippets for VS Code",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "publisher": "algorizen",
   "icon": "images/icon.png",
   "repository": {
@@ -65,6 +65,7 @@
     "conventional-changelog-cli": "^2.1.1",
     "enquirer": "^2.3.6",
     "execa": "^5.1.1",
+    "minimist": "^1.2.5",
     "semver": "^7.3.5",
     "standard-version": "^9.3.1"
   }

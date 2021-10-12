@@ -5,6 +5,7 @@ specifiers:
   conventional-changelog-cli: ^2.1.1
   enquirer: ^2.3.6
   execa: ^5.1.1
+  minimist: ^1.2.5
   semver: ^7.3.5
   standard-version: ^9.3.1
 
@@ -13,6 +14,7 @@ devDependencies:
   conventional-changelog-cli: 2.1.1
   enquirer: 2.3.6
   execa: 5.1.1
+  minimist: 1.2.5
   semver: 7.3.5
   standard-version: 9.3.1
 
