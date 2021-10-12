@@ -1,3 +1,13 @@
+## [0.1.8](https://github.com/algorizen/vscode-javascript-snippets/compare/v0.1.7...v0.1.8) (2021-10-12)
+
+
+### Features
+
+* add ts snippets ([2a38067](https://github.com/algorizen/vscode-javascript-snippets/commit/2a38067d0a1eb7233d25d83f6c41106a9df61469))
+* del vscode built-in snippets ([af8101f](https://github.com/algorizen/vscode-javascript-snippets/commit/af8101ff7792427a9ed7ae0bb229fbb71f22ce18))
+
+
+
 ## [0.1.7](https://github.com/algorizen/vscode-javascript-snippets/compare/v0.1.6...v0.1.7) (2021-10-04)
 
 
