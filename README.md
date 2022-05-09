@@ -61,7 +61,7 @@ Below is a list of all available snippets and the triggers of each one. Remember
 | ------- | ------------------------- |
 | `func`  | `function name(args) {}`  |
 | `af`    | `() => {}`                |
-| `iife`  | `;(() => {})()`            |
+| `iife`  | `;(() => {})()`           |
 | `afn`   | `const name = () => {}`   |
 | `funcg` | `function* name(args) {}` |
 
@@ -334,5 +334,19 @@ Below is a list of all available snippets and the triggers of each one. Remember
 | `thispar`  | `ThisParameterType<Type>`            |
 | `omitt`    | `OmitThisParameter<Type>`            |
 | `thist`    | `ThisType<Type>`                     |
+
+</details>
+
+### Vue
+
+<details>
+<summary>Table</summary>
+
+| Trigger    | Content                |
+| ---------- | ---------------------- |
+| `vue`      | `Vue SFC`              |
+| `script`   | `Vue <script> Block`   |
+| `template` | `Vue <template> Block` |
+| `style`    | `Vue <style> Block`    |
 
 </details>
