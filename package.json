@@ -4,31 +4,33 @@
   "description": "JavaScript(ES6+) syntax code snippets for VS Code",
   "version": "0.1.9",
   "publisher": "algorizen",
+  "author": "algorizen",
+  "license": "MIT",
   "icon": "images/icon.png",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/algorizen/vscode-javascript-snippets.git"
+  "engines": {
+    "vscode": "^1.29.0"
   },
   "keywords": [
     "js",
     "ts",
-    "JavaScript",
-    "TypeScript",
-    "code",
-    "snippets"
+    "javascript",
+    "typescript",
+    "vue",
+    "snippet"
   ],
-  "author": "algorizen",
-  "license": "MIT",
+  "categories": [
+    "Programming Languages",
+    "Snippets"
+  ],
+
+  "homepage": "https://github.com/algorizen/vscode-javascript-snippets#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/algorizen/vscode-javascript-snippets.git"
+  },
   "bugs": {
     "url": "https://github.com/algorizen/vscode-javascript-snippets/issues"
   },
-  "homepage": "https://github.com/algorizen/vscode-javascript-snippets#readme",
-  "engines": {
-    "vscode": "^1.29.0"
-  },
-  "categories": [
-    "Snippets"
-  ],
   "contributes": {
     "snippets": [
       {
@@ -48,24 +50,12 @@
         "path": "./snippets/javascript.json"
       },
       {
+        "language": "vue",
+        "path": "./snippets/javascript.json"
+      },
+      {
         "language": "html",
         "path": "./snippets/javascript.json"
-      },
-      {
-        "language": "vue",
-        "path": "./snippets/javascript.json"
-      },
-      {
-        "language": "typescript",
-        "path": "./snippets/typescript.json"
-      },
-      {
-        "language": "typescriptreact",
-        "path": "./snippets/typescript.json"
-      },
-      {
-        "language": "vue",
-        "path": "./snippets/vue.json"
       }
     ]
   }
