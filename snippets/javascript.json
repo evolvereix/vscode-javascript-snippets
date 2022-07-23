@@ -1,880 +1,173 @@
 {
-  "Key-Value Pair": {
-    "prefix": ["kv", "keyValue"],
-    "body": ["${1:key}: ${2:value}${0}"],
-    "description": "Key-Value Pair"
-  },
-
-  "Else Statement": {
-    "prefix": "els",
-    "body": ["else {", "\t${0}", "}"],
-    "description": "Else Statement"
-  },
-
-  "Else-If Statement": {
-    "prefix": "eli",
-    "body": ["else if (${1:condition}) {", "\t${0}", "}"],
-    "description": "Else-If Statement"
-  },
-
-  "Ternary Operator": {
-    "prefix": "ter",
-    "body": ["${1:condition} ? ${2:expression} : ${0:expression}"],
-    "description": "Ternary Operator"
-  },
-
-  "Catch Statement": {
-    "prefix": "tryc",
-    "body": ["catch (${1:e}) {", "\t${0}", "}"],
-    "description": "Catch Statement"
-  },
-
-  "Try-Finally Statement": {
-    "prefix": "tryf",
-    "body": ["finally {", "\t${0}", "}"],
-    "description": "Try-Finally Statement"
-  },
-
-  "Try-Catch-Finally Statement": {
-    "prefix": "trycf",
-    "body": [
-      "try {",
-      "\t",
-      "} catch (${1:e}) {",
-      "\t",
-      "} finally {",
-      "\t${0}",
-      "}"
-    ],
-    "description": "Try-Catch-Finally Statement"
-  },
-
   "Named Function": {
     "prefix": "func",
     "body": ["function ${1:name}(${2:args}) {", "\t${0}", "}"],
     "description": "Named Function"
   },
-
   "Arrow Function": {
     "prefix": "af",
-    "body": ["(${1:args}) => ${0}"],
+    "body": ["(${1:args}) => {${0}}"],
     "description": "Arrow Function"
   },
-
   "IIFE": {
     "prefix": "iife",
-    "body": ["${1:;}((${2:args}) => {", "\t${0}", "})(${3})"],
+    "body": [";((${1:args}) => {", "\t${0}", "})()"],
     "description": "IIFE"
   },
-
-  "Named Arrow Function Expressions": {
-    "prefix": "afn",
-    "body": ["const ${1:name} = (${2:args}) => {", "\t${0}", "}"],
-    "description": "Named Arrow Function Expressions"
-  },
-
-  "Generator Function": {
-    "prefix": "funcg",
-    "body": ["function* ${1:name}(${2:args}) {", "\t${0}", "}"],
-    "description": "Generator Function"
-  },
-
-  "concat() Method": {
-    "prefix": ["concat"],
-    "body": ["concat(${0})"],
-    "description": "concat() Method"
-  },
-
-  "includes() Method": {
-    "prefix": "includes",
-    "body": ["includes(${0})"],
-    "description": "includes() Method"
-  },
-
-  "indexOf() Method": {
-    "prefix": "indexOf",
-    "body": ["indexOf(${0})"],
-    "description": "indexOf() Method"
-  },
-
-  "lastIndexOf() Method": {
-    "prefix": "lastIndexOf",
-    "body": ["lastIndexOf(${0})"],
-    "description": "lastIndexOf() Method"
-  },
-
-  "slice() Method": {
-    "prefix": "slice",
-    "body": ["slice(${0})"],
-    "description": "slice() Method"
-  },
-
-  "toString() Method": {
-    "prefix": "toString",
-    "body": ["toString()${0}"],
-    "description": "toString() Method"
-  },
-
-  "Array.from()": {
-    "prefix": "from",
-    "body": ["Array.from(${0:arrayLike})"],
-    "description": "Array.from()"
-  },
-
-  "Array.isArray()": {
-    "prefix": "isArray",
-    "body": ["Array.isArray(${0:value})"],
-    "description": "Array.isArray()"
-  },
-
-  "Array.prototype.copyWithin()": {
-    "prefix": ["cw", "copyWithin"],
-    "body": ["copyWithin(${0})"],
-    "description": "Array.prototype.copyWithin()"
-  },
-
-  "Array.prototype.every()": {
-    "prefix": "every",
-    "body": ["every(${0})"],
-    "description": "Array.prototype.every()"
-  },
-
-  "Array.prototype.fill()": {
-    "prefix": "fill",
-    "body": ["fill(${0})"],
-    "description": "Array.prototype.fill()"
-  },
-
-  "Array.prototype.filter()": {
-    "prefix": "filter",
-    "body": ["filter(${0})"],
-    "description": "Array.prototype.filter()"
-  },
-
-  "Array.prototype.find()": {
-    "prefix": "find",
-    "body": ["find(${0})"],
-    "description": "Array.prototype.find()"
-  },
-
-  "Array.prototype.findIndex()": {
-    "prefix": "findIndex",
-    "body": ["findIndex(${0})"],
-    "description": "Array.prototype.findIndex()"
-  },
-
-  "Array.prototype.flat()": {
-    "prefix": "flat",
-    "body": ["flat(${1:Infinity})${0}"],
-    "description": "Array.prototype.flat()"
-  },
-
-  "Array.prototype.flatMap()": {
-    "prefix": "flatMap",
-    "body": ["flatMap((${1:item}, ${2:key}) => {", "\t${0}", "})"],
-    "description": "Array.prototype.flatMap()"
-  },
-
-  "Array.prototype.join()": {
-    "prefix": "join",
-    "body": ["join(${0})"],
-    "description": "Array.prototype.join()"
-  },
-
-  "Array.prototype.map()": {
-    "prefix": "map",
-    "body": ["map((${1}) => {", "\t${0}", "})"],
-    "description": "Array.prototype.map()"
-  },
-
-  "Array.prototype.pop()": {
-    "prefix": "pop",
-    "body": ["pop()${0}"],
-    "description": "Array.prototype.pop()"
-  },
-
-  "Array.prototype.push()": {
-    "prefix": "push",
-    "body": ["push(${0})"],
-    "description": "Array.prototype.push()"
-  },
-
-  "Array.prototype.reduce()": {
-    "prefix": "reduce",
-    "body": [
-      "reduce((${1:acc}, ${2:cur}) => {",
-      "\t${0}",
-      "}${3:, initialValue})"
-    ],
-    "description": "Array.prototype.reduce()"
-  },
-
-  "Array.prototype.reduceRight()": {
-    "prefix": "reduceRight",
-    "body": [
-      "reduceRight((${1:acc}, ${2:cur}) => {",
-      "\t${0}",
-      "}${3:, initialValue})"
-    ],
-    "description": "Array.prototype.reduceRight()"
-  },
-
-  "Array.prototype.reverse()": {
-    "prefix": "reverse",
-    "body": ["reverse()${0}"],
-    "description": "Array.prototype.reverse()"
-  },
-
-  "Array.prototype.shift()": {
-    "prefix": "shift",
-    "body": ["shift()${0}"],
-    "description": "Array.prototype.shift()"
-  },
-
-  "Array.prototype.some()": {
-    "prefix": "some",
-    "body": ["some((${1:item}, ${2:key}) => {", "\t${0}", "})"],
-    "description": "Array.prototype.some()"
-  },
-
   "Array.prototype.sort()": {
     "prefix": "sort",
-    "body": ["sort((${1:a}, ${2:b}) => ${1:a} - ${2:b})${0}"],
+    "body": ["${1}.sort((a, b) => ${2:a} - ${3:b})${0}"],
     "description": "Array.prototype.sort()"
   },
-
-  "Array.prototype.splice()": {
-    "prefix": "splice",
-    "body": ["splice(${0})"],
-    "description": "Array.prototype.splice()"
-  },
-
-  "Array.prototype.toLocaleString()": {
-    "prefix": ["tls", "toLocaleString"],
-    "body": ["toLocaleString(${0})"],
-    "description": "Array.prototype.toLocaleString()"
-  },
-
-  "Array.prototype.unshift()": {
-    "prefix": "unshift",
-    "body": ["unshift(${0})"],
-    "description": "Array.prototype.unshift()"
-  },
-
-  "String.fromCharCode()": {
-    "prefix": ["fromch", "fromCharCode"],
-    "body": ["String.fromCharCode(${0})"],
-    "description": "String.fromCharCode()"
-  },
-
-  "String.fromCodePoint()": {
-    "prefix": ["fromco", "fromCodePoint"],
-    "body": ["String.fromCodePoint(${0})"],
-    "description": "String.fromCodePoint()"
-  },
-
-  "String.raw()": {
-    "prefix": "raw",
-    "body": ["String.raw(${0})"],
-    "description": "String.raw()"
-  },
-
-  "String.prototype.charAt()": {
-    "prefix": "charAt",
-    "body": ["charAt(${0})"],
-    "description": "String.prototype.charAt()"
-  },
-
-  "String.prototype.charCodeAt()": {
-    "prefix": "charCodeAt",
-    "body": ["charCodeAt(${0})"],
-    "description": "String.prototype.charCodeAt()"
-  },
-
-  "String.prototype.codePointAt()": {
-    "prefix": "codePointAt",
-    "body": ["codePointAt(${0})"],
-    "description": "String.prototype.codePointAt()"
-  },
-
-  "String.prototype.endsWith()": {
-    "prefix": "endsWith",
-    "body": ["endsWith(${1}${0:, length})"],
-    "description": "String.prototype.endsWith()"
-  },
-
-  "String.prototype.localeCompare()": {
-    "prefix": "localeCompare",
-    "body": ["localeCompare(${0})"],
-    "description": "String.prototype.localeCompare()"
-  },
-
-  "String.prototype.match()": {
-    "prefix": "match",
-    "body": ["match(${0:regexp})"],
-    "description": "String.prototype.match()"
-  },
-
-  "String.prototype.matchAll()": {
-    "prefix": "matchAll",
-    "body": ["matchAll(${0:regexp})"],
-    "description": "String.prototype.matchAll()"
-  },
-
-  "String.prototype.normalize()": {
-    "prefix": "normalize",
-    "body": ["normalize(${0})"],
-    "description": "String.prototype.normalize()"
-  },
-
-  "String.prototype.padEnd()": {
-    "prefix": "padEnd",
-    "body": ["padEnd(${0})"],
-    "description": "String.prototype.padEnd()"
-  },
-
-  "String.prototype.padStart()": {
-    "prefix": "padStart",
-    "body": ["padStart(${0})"],
-    "description": "String.prototype.padStart()"
-  },
-
-  "String.prototype.repeat()": {
-    "prefix": "repeat",
-    "body": ["repeat(${0:count})"],
-    "description": "String.prototype.repeat()"
-  },
-
-  "String.prototype.replace()": {
-    "prefix": "replace",
-    "body": ["replace(${1}, ${0})"],
-    "description": "String.prototype.replace()"
-  },
-
-  "String.prototype.replaceAll": {
-    "prefix": "replaceall",
-    "body": ["replaceAll(${1}, ${0})"],
-    "description": "String.prototype.replaceAll()"
-  },
-
-  "String.prototype.search()": {
-    "prefix": "search",
-    "body": ["search(${0:regexp})"],
-    "description": "String.prototype.search()"
-  },
-
-  "String.prototype.split()": {
-    "prefix": "split",
-    "body": ["split(${0})"],
-    "description": "String.prototype.split()"
-  },
-
-  "String.prototype.startsWith()": {
-    "prefix": "startsWith",
-    "body": ["startsWith(${0})"],
-    "description": "String.prototype.startsWith()"
-  },
-
-  "String.prototype.substring()": {
-    "prefix": "substring",
-    "body": ["substring(${0})"],
-    "description": "String.prototype.substring()"
-  },
-
-  "String.prototype.toLocaleLowerCase()": {
-    "prefix": ["tll", "toLocaleLowerCase"],
-    "body": ["toLocaleLowerCase(${0})"],
-    "description": "String.prototype.toLocaleLowerCase()"
-  },
-
-  "String.prototype.toLocaleUpperCase()": {
-    "prefix": ["tlu", "toLocaleUpperCase"],
-    "body": ["toLocaleUpperCase(${0})"],
-    "description": "String.prototype.toLocaleUpperCase()"
-  },
-
-  "String.prototype.toLowerCase()": {
-    "prefix": ["tlc", "toLowerCase"],
-    "body": ["toLowerCase(${0})"],
-    "description": "String.prototype.toLowerCase()"
-  },
-
-  "String.prototype.toUpperCase()": {
-    "prefix": ["tou", "toUpperCase"],
-    "body": ["toUpperCase()${0}"],
-    "description": "String.prototype.toUpperCase()"
-  },
-
-  "String.prototype.trim()": {
-    "prefix": "trim",
-    "body": ["trim()${0}"],
-    "description": "String.prototype.trim()"
-  },
-
-  "String.prototype.trimEnd()": {
-    "prefix": "trimEnd",
-    "body": ["trimEnd()${0}"],
-    "description": "String.prototype.trimEnd()"
-  },
-
-  "String.prototype.trimStart()": {
-    "prefix": "trimStart",
-    "body": ["trimStart()${0}"],
-    "description": "String.prototype.trimStart()"
-  },
-
-  "String.prototype.valueOf()": {
-    "prefix": "valueOf",
-    "body": ["valueOf()${0}"],
-    "description": "String.prototype.valueOf()"
-  },
-
   "Object.assign()": {
     "prefix": "assign",
     "body": ["Object.assign(${1:target}, ${0:...source})"],
     "description": "Object.assign()"
   },
-
-  "Object.create()": {
-    "prefix": "create",
-    "body": ["Object.create(${0})"],
-    "description": "Object.create()"
-  },
-
-  "Object.defineProperties()": {
-    "prefix": ["dp", "defineProperties"],
-    "body": [
-      "Object.defineProperties(${1:obj}, {",
-      "\tconfigurable: ${2:false},",
-      "\tenumerable: ${3:false},",
-      "\twritable: ${4:false},",
-      "\tvalue: ${5:undefined},",
-      "\t${0}",
-      "})"
-    ],
-    "description": "Object.defineProperties()"
-  },
-
-  "Object.defineProperty()": {
-    "prefix": ["dp", "defineProperty"],
-    "body": [
-      "Object.defineProperty(${1:obj}, ${1:prop}, {",
-      "\tconfigurable: ${2:false},",
-      "\tenumerable: ${3:false},",
-      "\twritable: ${4:false},",
-      "\tvalue: ${5:undefined},",
-      "\t${0}",
-      "})"
-    ],
-    "description": "Object.defineProperty()"
-  },
-
-  "Object.entries()": {
-    "prefix": "entries",
-    "body": ["Object.entries(${0})"],
-    "description": "Object.entries()"
-  },
-
-  "Object.freeze()": {
-    "prefix": "freeze",
-    "body": ["Object.freeze(${0})"],
-    "description": "Object.freeze()"
-  },
-
-  "Object.fromEntries()": {
-    "prefix": "fromEntries",
-    "body": ["Object.fromEntries(${0:iterable})"],
-    "description": "Object.fromEntries()"
-  },
-
-  "Object.getOwnPropertyDescriptor()": {
-    "prefix": ["gopd", "getOwnPropertyDescriptor"],
-    "body": ["Object.getOwnPropertyDescriptor(${1:obj}, ${0:key})"],
-    "description": "Object.getOwnPropertyDescriptor()"
-  },
-
-  "Object.getOwnPropertyDescriptors()": {
-    "prefix": ["gopd", "getOwnPropertyDescriptors"],
-    "body": ["Object.getOwnPropertyDescriptors(${0:obj})"],
-    "description": "Object.getOwnPropertyDescriptors()"
-  },
-
-  "Object.getOwnPropertyNames()": {
-    "prefix": ["gopn", "getOwnPropertyNames"],
-    "body": ["Object.getOwnPropertyNames(${0:obj})"],
-    "description": "Object.getOwnPropertyNames()"
-  },
-
-  "Object.getOwnPropertySymbols()": {
-    "prefix": ["gops", "getOwnPropertySymbols"],
-    "body": ["Object.getOwnPropertySymbols(${0:obj})"],
-    "description": "Object.getOwnPropertySymbols()"
-  },
-
-  "Object.getPrototypeOf()": {
-    "prefix": ["gpo", "getPrototypeOf"],
-    "body": ["Object.getPrototypeOf(${0:obj})"],
-    "description": "Object.getPrototypeOf()"
-  },
-
-  "Object.is()": {
-    "prefix": "is",
-    "body": ["Object.is(${1:value1}, ${0:value2})"],
-    "description": "Object.is()"
-  },
-
-  "Object.isExtensible()": {
-    "prefix": "isExtensible",
-    "body": ["Object.isExtensible(${0:obj})"],
-    "description": "Object.isExtensible()"
-  },
-
-  "Object.isFrozen()": {
-    "prefix": "isFrozen",
-    "body": ["Object.isFrozen(${0:obj})"],
-    "description": "Object.isFrozen()"
-  },
-
-  "Object.isSealed()": {
-    "prefix": "isSealed",
-    "body": ["Object.isSealed(${0:obj})"],
-    "description": "Object.isSealed()"
-  },
-
-  "Object.keys()": {
-    "prefix": "keys",
-    "body": ["Object.keys(${0:obj})"],
-    "description": "Object.keys()"
-  },
-
-  "Object.preventExtensions()": {
-    "prefix": ["pe", "preventExtensions"],
-    "body": ["Object.preventExtensions(${0:obj})"],
-    "description": "Object.preventExtensions()"
-  },
-
-  "Object.seal()": {
-    "prefix": "seal",
-    "body": ["Object.seal(${0:obj})"],
-    "description": "Object.seal()"
-  },
-
-  "Object.setPrototypeOf()": {
-    "prefix": "setPrototypeOf",
-    "body": ["Object.setPrototypeOf(${1:obj}, ${0:null})"],
-    "description": "Object.setPrototypeOf()"
-  },
-
-  "Object.values()": {
-    "prefix": "values",
-    "body": ["Object.values(${0:obj})"],
-    "description": "Object.values()"
-  },
-
-  "Object.prototype.hasOwnProperty()": {
-    "prefix": "hasOwnProperty",
-    "body": ["hasOwnProperty(${0:item})"],
-    "description": "Object.prototype.hasOwnProperty()"
-  },
-
-  "Object.prototype.isPrototypeOf()": {
-    "prefix": "isPrototypeOf",
-    "body": ["${1:prototypeObj.}isPrototypeOf(${0:obj})"],
-    "description": "Object.prototype.isPrototypeOf()"
-  },
-
-  "Object.prototype.propertyIsEnumerable()": {
-    "prefix": ["pi", "propertyIsEnumerable"],
-    "body": ["propertyIsEnumerable(${0:obj})"],
-    "description": "Object.prototype.propertyIsEnumerable()"
-  },
-
-  "Object.prototype.toLocaleString()": {
-    "prefix": ["tls", "tolocalestring"],
-    "body": ["toLocaleString(${0:obj})"],
-    "description": "Object.prototype.toLocaleString()"
-  },
-
-  "Object.prototype.valueOf()": {
-    "prefix": "valueOf",
-    "body": [
-      "${1:object}.${2:prototype}.valueOf = function () {",
-      "\t${0}",
-      "}"
-    ],
-    "description": "Object.prototype.valueOf()"
-  },
-
-  "Clear() Method": {
-    "prefix": "clear",
-    "body": ["clear()${0}"],
-    "description": "Clear() Method"
-  },
-
-  "Delete() Method": {
-    "prefix": "delete",
-    "body": ["delete(${0})"],
-    "description": "Delete() Method"
-  },
-
-  "Has() Method": {
-    "prefix": "has",
-    "body": ["has(${0})"],
-    "description": "Has() Method"
-  },
-
-  "Add() Method": {
-    "prefix": "add",
-    "body": ["add(${0})"],
-    "description": "Add() Method"
-  },
-
-  "Get() Method": {
-    "prefix": "get",
-    "body": ["get(${0})"],
-    "description": "Get() Method"
-  },
-
-  "Set() Method": {
-    "prefix": "set",
-    "body": ["set(${0})"],
-    "description": "Set() Method"
-  },
-
-  "Class Elements": {
-    "prefix": "class",
-    "body": [
-      "class ${1:name} {",
-      "\tconstructor(${2:args}) {",
-      "\t\t${0}",
-      "\t}",
-      "}"
-    ],
-    "description": "Class Elements"
-  },
-
-  "Class Constructor": {
-    "prefix": ["constructor"],
-    "body": ["constructor(${1:args}) {", "\t${0}", "}"],
-    "description": "Class Constructor"
-  },
-
-  "Class Extends": {
-    "prefix": "classe",
-    "body": [
-      "class ${1:name} extends ${2:base} {",
-      "\tconstructor(${3:args}) {",
-      "\t\tsuper(${3:args})",
-      "\t\t${0}",
-      "\t}",
-      "}"
-    ],
-    "description": "Class Extends"
-  },
-
-  "Class Static Statement": {
-    "prefix": "stat",
-    "body": ["static ${0}"],
-    "description": "Class Static Statement"
-  },
-
   "Prototype Method": {
     "prefix": ["pt", "prototype"],
     "body": [
-      "${1:name}.prototype.${2:method} = function (${3:args}) {",
+      "${1:name}.prototype.${2:method} = function (${3}) {",
       "\t${0}",
       "}"
     ],
     "description": "Prototype Method"
   },
-
-  "Getter": {
-    "prefix": "gett",
-    "body": ["get ${1:property}() {", "\t${0}", "}"],
-    "description": "Getter"
-  },
-
-  "Setter": {
-    "prefix": "sett",
-    "body": ["set ${1:property}(${2:value}) {", "\t${0}", "}"],
-    "description": "Setter"
-  },
-
-  "Typeof": {
-    "prefix": "typeof",
-    "body": ["typeof ${0:source}"],
-    "description": "Typeof"
-  },
-
-  "Instanceof": {
-    "prefix": "instanceof",
-    "body": ["${1}instanceof ${0:Object}"],
-    "description": "Instanceof"
-  },
-
   "Return Promise": {
-    "prefix": "retp",
+    "prefix": ["rep", "retp"],
     "body": [
       "return new Promise((resolve, reject) => {",
-      "\t${0:resolve()}",
+      "\tresolve()${0}",
       "})"
     ],
     "description": "Return Promise"
   },
-
-  "Promise": {
-    "prefix": "pro",
-    "body": ["new Promise((resolve, reject) => {", "\t${0:resolve()}", "})"],
-    "description": "Promise"
-  },
-
-  "Promise.prototype.then()": {
-    "prefix": "prot",
-    "body": ["${1:Promise.}then(${2})${0}"],
-    "description": "Promise.prototype.then()"
-  },
-
-  "Promise.prototype.catch()": {
-    "prefix": "proc",
-    "body": ["${1:Promise.}catch(${2})${0}"],
-    "description": "Promise.prototype.catch()"
-  },
-
-  "Promise.prototype.finally()": {
-    "prefix": "prof",
-    "body": ["${1:Promise.}finally(${2})${0}"],
-    "description": "Promise.prototype.finally()"
-  },
-
-  "Promise.all()": {
-    "prefix": "proall",
-    "body": ["Promise.all(${1:iterable})${0}"],
-    "description": "Promise.all()"
-  },
-
-  "Promise.race()": {
-    "prefix": ["prorace", "race"],
-    "body": ["Promise.race(${1:iterable})${0}"],
-    "description": "Promise.race()"
-  },
-
-  "Promise.allSettled()": {
-    "prefix": ["proall", "allSettled"],
-    "body": ["Promise.allSettled(${1:iterable})${0}"],
-    "description": "Promise.allSettled()"
-  },
-
-  "Promise.any()": {
-    "prefix": "proany",
-    "body": ["Promise.any(${1:iterable})${0}"],
-    "description": "Promise.any()"
-  },
-
-  "Promise.reject()": {
-    "prefix": "reject",
-    "body": ["${1:Promise.}reject(${2})${0}"],
-    "description": "Promise.reject()"
-  },
-
-  "Promise.resolve()": {
-    "prefix": "resolve",
-    "body": ["${1:Promise.}resolve(${2})${0}"],
-    "description": "Promise.resolve()"
-  },
-
-  "Async Statement": {
-    "prefix": "async",
-    "body": ["async"],
-    "description": "Async Statement"
-  },
-
-  "Await Statement": {
-    "prefix": "await",
-    "body": ["await ${0:expr}"],
-    "description": "Await Statement"
-  },
-
   "ES Export": {
     "prefix": "exp",
     "body": ["export ${0:member}"],
-    "description": "Export"
+    "description": "ES Export"
   },
-
+  "ES Export All": {
+    "prefix": "expa",
+    "body": ["export * from ${0:member}"],
+    "description": "ES Export All"
+  },
   "ES Export Default": {
     "prefix": "expd",
     "body": ["export default ${0:member}"],
-    "description": "Export Default"
+    "description": "ES Export Default"
   },
-
   "ES Export Function": {
     "prefix": "expf",
     "body": ["export function ${1:name}(${2:args}) {", "\t${0}", "}"],
-    "description": "Export Function"
+    "description": "ES Export Function"
   },
-
   "ES Export Arrow Function": {
     "prefix": "expaf",
     "body": ["export const ${1:name} = (${2:args}) => {", "\t${0}", "}"],
-    "description": "Export Arrow Function"
+    "description": "ES Export Arrow Function"
   },
-
   "ES Import External Module": {
     "prefix": "imp",
     "body": ["import ${0:*} from '${1:module}'"],
-    "description": "ES Import External Module"
+    "description": "ES Import"
   },
-
-  "ES Import Destructuring": {
-    "prefix": "impe",
-    "body": ["import * as ${0:name} from '${1:module}'"],
-    "description": "ES Import Entire Module"
+  "CJS Module Exports": {
+    "prefix": "mod",
+    "body": ["module.exports = ${0}"],
+    "description": "CJS Module Exports"
   },
-
-  "CommonJS Module Exports": {
-    "prefix": "moe",
-    "body": ["module.exports = ${0:name}"],
-    "description": "CommonJS Module Exports"
-  },
-
-  "CommonJS Module Exports Object": {
-    "prefix": "moeo",
-    "body": ["module.exports = {", "\t${0:member}", "}"],
-    "description": "CommonJS Module Exports Object"
-  },
-
-  "CommonJS Require": {
+  "CJS Require": {
     "prefix": "req",
-    "body": ["require('${0:module}')"],
-    "description": "CommonJS Require"
+    "body": ["require(${0})"],
+    "description": "CJS Require"
   },
-
-  "Ctx Arrow Function": {
-    "prefix": "ctx",
-    "body": ["(ctx, next) => ${0}"],
-    "description": "Ctx Arrow Function"
-  },
-
   "setImmediate": {
     "prefix": "setim",
     "body": ["setImmediate(() => {", "\t${0}", "})"],
     "description": "setImmediate"
   },
-
-  "Process NextTick": {
-    "prefix": "nt",
-    "body": ["process.nextTick(() => {", "\t${0}", "})"],
-    "description": "Process NextTick"
+  "Typeof": {
+    "prefix": "typeof",
+    "body": ["typeof ${0:source}"],
+    "description": "Typeof"
   },
-
+  "Instanceof": {
+    "prefix": "instanceof",
+    "body": ["${1}instanceof ${0:Object}"],
+    "description": "Instanceof"
+  },
+  "Get Built-in Type": {
+    "prefix": "call",
+    "body": ["Object.prototype.toString.call(${0})"],
+    "description": "Get Built-in Type"
+  },
+  "NextTick": {
+    "prefix": "nextt",
+    "body": ["nextTick(${0})"],
+    "description": "NextTick"
+  },
+  "Process": {
+    "prefix": "proc",
+    "body": ["process${0}"],
+    "description": "Process"
+  },
   "Insert 'use strict' Statement": {
     "prefix": "us",
     "body": ["'use strict'"],
     "description": "Insert 'use strict' Statement"
   },
-
   "Print to dir": {
     "prefix": "dir",
     "body": ["console.dir(${0})"],
     "description": "Dir output to console"
+  },
+  "vue-SFC-setup": {
+    "scope": "vue",
+    "prefix": "vue",
+    "body": [
+      "<script setup lang=\"ts\">",
+      "${0}",
+      "</script>",
+      "",
+      "<template>",
+      "\t",
+      "</template>",
+      "",
+      "<style lang=\"${1}\" scoped>",
+      "",
+      "</style>"
+    ],
+    "description": "vue-SFC-setup"
+  },
+  "vue-script-setup": {
+    "scope": "vue",
+    "prefix": "script",
+    "body": ["<script setup lang=\"ts\">", "${0}", "</script>"],
+    "description": "vue-script-setup"
+  },
+  "vue-template": {
+    "scope": "vue",
+    "prefix": "template",
+    "body": ["<template>", "\t${0}", "</template>"],
+    "description": "vue-template"
+  },
+  "vue-style-scoped": {
+    "scope": "vue",
+    "prefix": "style",
+    "body": ["<style lang=\"${1}\" scoped>", "${0}", "</style>"],
+    "description": "vue-style-scoped"
+  },
+  "vue-computed": {
+    "scope": "javascript,typescript,vue",
+    "prefix": "comp",
+    "body": ["computed(() => {$1})"],
+    "description": "vue-computed"
+  },
+  "vue-watch-effect": {
+    "scope": "javascript,typescript,vue",
+    "prefix": "watchE",
+    "body": ["watchEffect(() => {", "  $1", "})"],
+    "description": "vue-watch-effect"
   }
 }
