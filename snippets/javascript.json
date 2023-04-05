@@ -121,53 +121,5 @@
     "prefix": "dir",
     "body": ["console.dir(${0})"],
     "description": "Dir output to console"
-  },
-  "vue-SFC-setup": {
-    "scope": "vue",
-    "prefix": "vue",
-    "body": [
-      "<script setup lang=\"ts\">",
-      "${0}",
-      "</script>",
-      "",
-      "<template>",
-      "\t",
-      "</template>",
-      "",
-      "<style lang=\"${1}\" scoped>",
-      "",
-      "</style>"
-    ],
-    "description": "vue-SFC-setup"
-  },
-  "vue-script-setup": {
-    "scope": "vue",
-    "prefix": "script",
-    "body": ["<script setup lang=\"ts\">", "${0}", "</script>"],
-    "description": "vue-script-setup"
-  },
-  "vue-template": {
-    "scope": "vue",
-    "prefix": "template",
-    "body": ["<template>", "\t${0}", "</template>"],
-    "description": "vue-template"
-  },
-  "vue-style-scoped": {
-    "scope": "vue",
-    "prefix": "style",
-    "body": ["<style lang=\"${1}\" scoped>", "${0}", "</style>"],
-    "description": "vue-style-scoped"
-  },
-  "vue-computed": {
-    "scope": "javascript,typescript,vue",
-    "prefix": "comp",
-    "body": ["computed(() => {$1})"],
-    "description": "vue-computed"
-  },
-  "vue-watch-effect": {
-    "scope": "javascript,typescript,vue",
-    "prefix": "watchE",
-    "body": ["watchEffect(() => {", "  $1", "})"],
-    "description": "vue-watch-effect"
   }
 }
