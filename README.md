@@ -48,10 +48,3 @@ Below is a list of all available snippets and the triggers of each one. Remember
 | `proc`         | `process`                                 |
 | `us`           | `'use strict'`                            |
 | `dir`          | `console.dir()`                           |
-| `vue`          | `Vue SFC`                                 |
-| `script`       | `<script setup lang="ts"></script>`       |
-| `template`     | `<template></template>`                   |
-| `style`        | `<style lang="" scoped></style>`          |
-| `comp`         | `computed(() => {})`                      |
-| `watchE`       | `watchEffect(() => {})`                   |
-
