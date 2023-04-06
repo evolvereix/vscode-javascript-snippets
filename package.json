@@ -4,7 +4,7 @@
   "description": "JavaScript(ES6+) syntax code snippets for VS Code",
   "version": "0.2.2",
   "publisher": "algorizen",
-  "author": "algorizen",
+  "author": "Evolvereix",
   "license": "MIT",
   "icon": "images/icon.png",
   "engines": {
@@ -22,13 +22,13 @@
     "Programming Languages",
     "Snippets"
   ],
-  "homepage": "https://github.com/algorizen/vscode-javascript-snippets#readme",
+  "homepage": "https://github.com/evolvereix/vscode-javascript-snippets#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/algorizen/vscode-javascript-snippets.git"
+    "url": "git+https://github.com/evolvereix/vscode-javascript-snippets.git"
   },
   "bugs": {
-    "url": "https://github.com/algorizen/vscode-javascript-snippets/issues"
+    "url": "https://github.com/evolvereix/vscode-javascript-snippets/issues"
   },
   "contributes": {
     "snippets": [
@@ -57,5 +57,13 @@
         "path": "./snippets/javascript.json"
       }
     ]
+  },
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "devDependencies": {
+    "vitepress": "1.0.0-alpha.65"
   }
 }
