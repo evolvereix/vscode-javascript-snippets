@@ -30,6 +30,10 @@
   "bugs": {
     "url": "https://github.com/evolvereix/vscode-javascript-snippets/issues"
   },
+  "activationEvents": [
+    "onCommand:extension.insertConsoleLogStatement"
+  ],
+  "main": "./extension",
   "contributes": {
     "snippets": [
       {
@@ -56,6 +60,20 @@
         "language": "html",
         "path": "./snippets/javascript.json"
       }
+    ],
+    "commands": [
+      {
+        "command": "extension.insertConsoleLogStatement",
+        "title": "Insert console.log Statement"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "extension.insertConsoleLogStatement",
+        "key": "shift+alt+l",
+        "mac": "shift+ctrl+l",
+        "when": "editorTextFocus"
+      }
     ]
   },
   "scripts": {
@@ -64,6 +82,7 @@
     "docs:preview": "vitepress preview docs"
   },
   "devDependencies": {
-    "vitepress": "1.0.0-alpha.65"
+    "vitepress": "1.0.0-alpha.65",
+    "vscode": "^1.1.37"
   }
 }
