@@ -63,15 +63,19 @@
     ],
     "commands": [
       {
-        "command": "extension.insertConsoleLogStatement",
-        "title": "Insert console.log Statement"
+        "command": "extension.insertConsoleLogStatementDown",
+        "title": "JavaScript Snippets: Insert The console.log Statement"
       }
     ],
     "keybindings": [
       {
-        "command": "extension.insertConsoleLogStatement",
-        "key": "shift+alt+l",
-        "mac": "shift+ctrl+l",
+        "command": "extension.insertConsoleLogStatementDown",
+        "mac": "ctrl+cmd+l",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "extension.insertConsoleLogStatementUp",
+        "mac": "shift+ctrl+cmd+l",
         "when": "editorTextFocus"
       }
     ]
