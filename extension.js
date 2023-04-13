@@ -15,8 +15,8 @@ const insertText = (val) => {
   })
 }
 
-const insertConsoleLogStatement = vscode.commands.registerCommand(
-  'extension.insertConsoleLogStatement',
+const insertConsoleLogStatementDown = vscode.commands.registerCommand(
+  'extension.insertConsoleLogStatementDown',
   () => {
     const editor = vscode.window.activeTextEditor
     if (!editor) return
@@ -35,9 +35,30 @@ const insertConsoleLogStatement = vscode.commands.registerCommand(
   }
 )
 
+const insertConsoleLogStatementUp = vscode.commands.registerCommand(
+  'extension.insertConsoleLogStatementUp',
+  () => {
+    const editor = vscode.window.activeTextEditor
+    if (!editor) return
+
+    const selection = editor.selection
+    const text = editor.document.getText(selection)
+
+    text
+      ? vscode.commands
+          .executeCommand('editor.action.insertLineBefore')
+          .then(() => {
+            const logToInsert = `console.log('${text}: ', ${text})`
+            insertText(logToInsert)
+          })
+      : insertText('console.log()')
+  }
+)
+
 function activate(context) {
   console.log('The algorizen.javascript-snippets extension has been activated.')
-  context.subscriptions.push(insertConsoleLogStatement)
+  context.subscriptions.push(insertConsoleLogStatementDown)
+  context.subscriptions.push(insertConsoleLogStatementUp)
 }
 
 exports.activate = activate

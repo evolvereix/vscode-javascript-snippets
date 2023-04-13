@@ -16,7 +16,10 @@
 
 ## Insert console.log()
 
-Keyboard Shortcut: `Shift + Ctrl + L`
+Keyboard Shortcut: 
+
+- Down: `Ctrl + Cmd + L`
+- Up: `Shift + Ctrl + Cmd + L`
 
 Output:
 
@@ -27,7 +30,7 @@ console.log() // without selection
 
 ## Snippets
 
-Below is a list of all available snippets and the triggers of each one. Remember to use `tab` key.
+Below is a list of all available snippets and the triggers of each one. Remember to use `Tab` key.
 
 **Note**
 
