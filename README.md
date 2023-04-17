@@ -24,8 +24,8 @@ Keyboard Shortcut:
 Output:
 
 ```js
-console.log('variable: ', variable) // selection
-console.log() // without selection
+console.log('[JS Snips Log]: variable:', variable) // selection
+console.log('[JS Snips Log]: ') // without selection
 ```
 
 ## Snippets
