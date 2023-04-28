@@ -28,10 +28,10 @@ const insertConsoleLogStatementDown = vscode.commands.registerCommand(
       ? vscode.commands
           .executeCommand('editor.action.insertLineAfter')
           .then(() => {
-            const logToInsert = `console.log('[JS Snips Log]: ${text}:', ${text})`
+            const logToInsert = `console.log('JSS log ${text}:', ${text})`
             insertText(logToInsert)
           })
-      : insertText(`console.log('[JS Snips Log]: ')`)
+      : insertText(`console.log('JSS log :', )`)
   }
 )
 
@@ -48,11 +48,10 @@ const insertConsoleLogStatementUp = vscode.commands.registerCommand(
       ? vscode.commands
           .executeCommand('editor.action.insertLineBefore')
           .then(() => {
-            const logToInsert = `console.log('[JS Snips Log]: ${text}:', ${text})`
-
+            const logToInsert = `console.log('JSS log ${text}:', ${text})`
             insertText(logToInsert)
           })
-      : insertText(`console.log('[JS Snips Log]: ')`)
+      : insertText(`console.log('JSS log :', )`)
   }
 )
 
