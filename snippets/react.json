@@ -1,0 +1,87 @@
+{
+  "useState": {
+    "prefix": "usest",
+    "body": [
+      "const [${1:state}, set${1/(.*)/${1:/capitalize}/}] = useState(${2})"
+    ],
+    "description": "const [state, setState] = useState()"
+  },
+  "useEffect": {
+    "prefix": "usee",
+    "body": [
+      "useEffect(() => {",
+      "\t${1}",
+      "}, [])"
+    ],
+    "description": "useEffect(() => {}, [])"
+  },
+  "useContext": {
+    "prefix": "usec",
+    "body": [
+      "const ${1} = useContext(${2})"
+    ],
+    "description": "const value = useContext()"
+  },
+  "useCallback": {
+    "prefix": "usecb",
+    "body": [
+      "const ${1} = useCallback(() => {",
+      "\t${2}",
+      "}, [])"
+    ],
+    "description": "const memoizedCallback = useCallback(() => {}, [])"
+  },
+  "useMemo": {
+    "prefix": "usem",
+    "body": [
+      "const ${1} = useMemo(() => {",
+      "\t${1}",
+      "}, [])"
+    ],
+    "description": "const memoizedValue = useMemo(() => {}, [])"
+  },
+  "useRef": {
+    "prefix": "user",
+    "body": [
+      "const ${1} = useRef(${2})"
+    ],
+    "description": "const refContainer = useRef()"
+  },
+  "useImperativeHandle": {
+    "prefix": "useih",
+    "body": [
+      "useImperativeHandle(ref, ${1})"
+    ],
+    "description": "useImperativeHandle(ref, createHandle)"
+  },
+  "useId": {
+    "prefix": "useid",
+    "body": [
+      "const ${1} = useId()"
+    ],
+    "description": "const id = useId()"
+  },
+  "useLayoutEffect": {
+    "prefix": "usele",
+    "body": [
+      "useLayoutEffect(() => {",
+      "\t${1}",
+      "}, [])"
+    ],
+    "description": "useLayoutEffect(() => {}, [])"
+  },
+  "useReducer": {
+    "prefix": "userd",
+    "body": [
+      "const [${1}, ${2}] = useReducer(${3})"
+    ],
+    "description": "const [state, dispatch] = useState()"
+  },
+  "useDebugValue": {
+    "prefix": "usedv",
+    "body": [
+      "useDebugValue(${1})"
+    ],
+    "description": "useDebugValue()"
+  }
+}
