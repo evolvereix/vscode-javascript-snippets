@@ -1,4 +1,5 @@
 const vscode = require('vscode')
+const path = require('path')
 
 const insertText = (val) => {
   const editor = vscode.window.activeTextEditor
@@ -15,49 +16,39 @@ const insertText = (val) => {
   })
 }
 
+const insertConsoleLogStatement = (command) => {
+  if (!command) return
+
+  const editor = vscode.window.activeTextEditor
+  if (!editor) return
+
+  const selection = editor.selection
+  const text = editor.document.getText(selection)
+
+  const fileName = path.parse(editor.document.fileName).name
+  const name = fileName.includes('Untitled') ? '' : ` ${fileName}`
+
+  text
+    ? vscode.commands.executeCommand(command).then(() => {
+        const logToInsert = `console.log('JSS log${name} ${text}:', ${text})`
+        insertText(logToInsert)
+      })
+    : insertText(`console.log('JSS log${name} :', )`)
+}
+
 const insertConsoleLogStatementDown = vscode.commands.registerCommand(
   'extension.insertConsoleLogStatementDown',
-  () => {
-    const editor = vscode.window.activeTextEditor
-    if (!editor) return
-
-    const selection = editor.selection
-    const text = editor.document.getText(selection)
-
-    text
-      ? vscode.commands
-          .executeCommand('editor.action.insertLineAfter')
-          .then(() => {
-            const logToInsert = `console.log('JSS log ${text}:', ${text})`
-            insertText(logToInsert)
-          })
-      : insertText(`console.log('JSS log :', )`)
-  }
+  () => insertConsoleLogStatement('editor.action.insertLineAfter')
 )
 
 const insertConsoleLogStatementUp = vscode.commands.registerCommand(
   'extension.insertConsoleLogStatementUp',
-  () => {
-    const editor = vscode.window.activeTextEditor
-    if (!editor) return
-
-    const selection = editor.selection
-    const text = editor.document.getText(selection)
-
-    text
-      ? vscode.commands
-          .executeCommand('editor.action.insertLineBefore')
-          .then(() => {
-            const logToInsert = `console.log('JSS log ${text}:', ${text})`
-            insertText(logToInsert)
-          })
-      : insertText(`console.log('JSS log :', )`)
-  }
+  () => insertConsoleLogStatement('editor.action.insertLineBefore')
 )
 
 function activate(context) {
   console.log(
-    '[JS Snips Log]: The algorizen.javascript-snippets extension has been activated.'
+    '[JSS log]: The algorizen.javascript-snippets extension has been activated.'
   )
   context.subscriptions.push(insertConsoleLogStatementDown)
   context.subscriptions.push(insertConsoleLogStatementUp)

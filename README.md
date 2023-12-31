@@ -5,18 +5,9 @@
 
 <a href="https://marketplace.visualstudio.com/items?itemName=algorizen.javascript-snippets" target="__blank"><img src="https://img.shields.io/visual-studio-marketplace/v/algorizen.javascript-snippets.svg?color=blue&amp;label=VS%20Code%20Marketplace&logo=visual-studio-code" alt="Visual Studio Marketplace Version" /></a>
 
-### Recommended VS Code Settings
-
-```json
-{
-  "editor.suggestSelection": "recentlyUsedByPrefix",
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue"
-}
-```
-
 ## Insert console.log()
 
-Keyboard Shortcut: 
+Keyboard Shortcut:
 
 - Down: `Ctrl + Cmd + L`
 - Up: `Shift + Ctrl + Cmd + L`
@@ -24,8 +15,8 @@ Keyboard Shortcut:
 Output:
 
 ```js
-console.log('[JS Snips Log]: variable:', variable) // selection
-console.log('[JS Snips Log]: ') // without selection
+console.log('JSS log[ FILENAME] VARIABLE:', VARIABLE) // selection
+console.log('JSS log[ FILENAME] :') // without selection
 ```
 
 ## Snippets
@@ -37,6 +28,8 @@ Below is a list of all available snippets and the triggers of each one. Remember
 - Excluding VS Code built-in snippets.
 - Excluding the final semicolon `;`.
 - Use single quotes(`''`) instead of double quotes(`""`).
+
+### Common
 
 | Trigger                   | Content                                              |
 | ------------------------- | ---------------------------------------------------- |
@@ -63,6 +56,22 @@ Below is a list of all available snippets and the triggers of each one. Remember
 | <samp>proc</samp>         | <samp>process</samp>                                 |
 | <samp>us</samp>           | <samp>'use strict'</samp>                            |
 | <samp>dir</samp>          | <samp>console.dir()</samp>                           |
+
+### React
+
+| Trigger            | Content                                                         |
+| ------------------ | --------------------------------------------------------------- |
+| <samp>usest</samp> | <samp>const [state, setState] = useState()</samp>               |
+| <samp>usee</samp>  | <samp>useEffect(() => {}, [])</samp>                            |
+| <samp>usec</samp>  | <samp>const value = useContext()</samp>                         |
+| <samp>usecb</samp> | <samp>const memoizedCallback = useCallback(() => {}, [])</samp> |
+| <samp>usem</samp>  | <samp>const memoizedValue = useMemo(() => {}, [])</samp>        |
+| <samp>user</samp>  | <samp>const refContainer = useRef()</samp>                      |
+| <samp>useih</samp> | <samp>useImperativeHandle(ref, createHandle)</samp>             |
+| <samp>useid</samp> | <samp>const id = useId()</samp>                                 |
+| <samp>usele</samp> | <samp>useLayoutEffect(() => {}, [])</samp>                      |
+| <samp>userd</samp> | <samp>const [state, dispatch] = useReducer()</samp>               |
+| <samp>usedv</samp> | <samp>useDebugValue()</samp>                                    |
 
 ## License
 
