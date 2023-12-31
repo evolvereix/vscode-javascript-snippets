@@ -75,7 +75,7 @@
     "body": [
       "const [${1}, ${2}] = useReducer(${3})"
     ],
-    "description": "const [state, dispatch] = useState()"
+    "description": "const [state, dispatch] = useReducer()"
   },
   "useDebugValue": {
     "prefix": "usedv",
