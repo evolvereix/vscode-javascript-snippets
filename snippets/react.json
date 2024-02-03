@@ -35,7 +35,7 @@
     "prefix": "usem",
     "body": [
       "const ${1} = useMemo(() => {",
-      "\t${1}",
+      "\t${2}",
       "}, [])"
     ],
     "description": "const memoizedValue = useMemo(() => {}, [])"
