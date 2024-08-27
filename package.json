@@ -2,7 +2,7 @@
   "name": "javascript-snippets",
   "displayName": "JavaScript Snippets",
   "description": "JavaScript(ES6+) syntax code snippets for VS Code",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "publisher": "algorizen",
   "author": "Evolvereix",
   "license": "MIT",
