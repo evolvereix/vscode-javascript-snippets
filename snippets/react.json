@@ -25,7 +25,7 @@
   "useCallback": {
     "prefix": "usecb",
     "body": [
-      "const ${1} = useCallback(() => {",
+      "useCallback(() => {",
       "\t${2}",
       "}, [])"
     ],
@@ -34,7 +34,7 @@
   "useMemo": {
     "prefix": "usem",
     "body": [
-      "const ${1} = useMemo(() => {",
+      "useMemo(() => {",
       "\t${2}",
       "}, [])"
     ],
